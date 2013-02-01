@@ -12,6 +12,7 @@
 <li><a href="helloworld.html">Hello World</a></li>
 <li><a href="client">Add a Client</a></li>
 <li><a href="user">Create a User</a></li>
+<li><a href="user">User List</a></li>
 </ul>
 </body>
 </html>
