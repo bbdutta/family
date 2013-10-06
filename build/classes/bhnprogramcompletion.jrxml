@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c19834a-e14a-4a91-9bee-d04759a6135e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="7f9102cd-cefe-4b44-8d5b-f3b9888466df"/>
+	<field name="successDischargeNum" class="java.lang.Number">
+		<fieldDescription><![CDATA[successDischargeNum]]></fieldDescription>
+	</field>
+	<field name="unsuccessDischargeNum" class="java.lang.Number">
+		<fieldDescription><![CDATA[unsuccessDischargeNum]]></fieldDescription>
+	</field>
+	<field name="otherDischargeNum" class="java.lang.Number">
+		<fieldDescription><![CDATA[otherDischargeNum]]></fieldDescription>
+	</field>
+	<field name="successDischargePct" class="java.math.BigDecimal"/>
+	<field name="startDate" class="java.lang.String">
+		<fieldDescription><![CDATA[startDate]]></fieldDescription>
+	</field>
+	<field name="endDate" class="java.lang.String">
+		<fieldDescription><![CDATA[endDate]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="cb946133-6997-4d0e-ab48-58129e55b03c" x="0" y="0" width="555" height="47"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Behavioral Health Program Completion]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="cc38f94c-a3bf-4a10-b209-0333ba0c4cb8" x="78" y="27" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{startDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="70e55a1f-aa26-490e-86ac-d97f99ce2b97" x="228" y="27" width="70" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{endDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6c84304b-8b29-46b4-a373-a75fd02a6edd" x="0" y="27" width="78" height="20"/>
+				<textElement/>
+				<text><![CDATA[Start Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6a0988de-89e6-4a29-aaff-e2773cac9230" x="161" y="27" width="67" height="20"/>
+				<textElement/>
+				<text><![CDATA[End Date:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6114ace2-ff1b-4412-b426-256ddf68a834" x="128" y="0" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Outcome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8dfe3c36-5b06-4044-a91e-1a1568251768" x="392" y="0" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Measure]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bcba84dd-16fc-4356-855a-14eaf2ac3345" x="22" y="20" width="239" height="44"/>
+				<textElement/>
+				<text><![CDATA[Client has successfullt completed all components of the program.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e4ee0cf0-a35b-4183-abad-4b85c8f75ac1" x="331" y="20" width="224" height="44"/>
+				<textElement/>
+				<text><![CDATA[70% of the discharged clients will have complete the program successfully.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="7b91e36e-ea1e-46ec-80ee-7374271617aa" x="0" y="10" width="261" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total # successful discharges:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="08fafa5f-691c-481d-8602-97c309c5dee4" x="0" y="40" width="261" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total # unsuccessful discharges:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd76d95b-9e6a-47ce-a49d-6857394f1fde" x="0" y="71" width="261" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total # other discharges:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="34c10df1-2cc0-4694-b4ac-39b3d6d90e08" x="261" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{successDischargeNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="272d5e33-ec56-42c8-a648-9798ef590858" x="261" y="40" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{unsuccessDischargeNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dd971127-b9ca-44d4-adf8-dfdc97bba47d" x="261" y="71" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{otherDischargeNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="50494fd8-fea1-4b83-9ecb-cb7854e620e7" x="361" y="10" width="21" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{successDischargePct}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0471410a-df34-40c1-864b-a4acb2ad0500" x="382" y="10" width="10" height="20"/>
+				<textElement/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

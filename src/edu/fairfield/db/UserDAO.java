@@ -21,6 +21,13 @@ public interface UserDAO {
 	public void create(String userName, String password, String firstName, String middleName, String lastName, String email, String phoneNo); 
 	
 	/** 
+	 * This is the method to be used to validate
+	 * userName and password. 
+	 * 
+	 */ 
+	public User login(String userName, String password); 
+
+	/** 
 	 * This is the method to be used to list down 
 	 * a record from the user table corresponding 
 	 * to a passed user id. 
@@ -41,5 +48,19 @@ public interface UserDAO {
 	 */ 
 	public void delete(Long id); 
 	
-
+	/** 
+	 * This is the method to be used to list down 
+	 * a record from the user_program table corresponding 
+	 * to a passed user id. 
+	 * 
+	 */ 
+	public long getUserProgramId(Long id); 
+	
+	/** 
+	 * This is the method to be used to list down 
+	 * a record from the user_program table corresponding 
+	 * to a passed user id. 
+	 * 
+	 */ 
+	public String getUserRole(Long id); 
 }

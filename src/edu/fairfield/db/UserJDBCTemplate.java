@@ -49,4 +49,27 @@ public class UserJDBCTemplate implements UserDAO {
 
 	}
 
+	@Override
+	public User login(String userName, String password) {
+
+		String SQL = "select * from user where username = ? and password = ?"; 
+		return jdbcTemplateObject.queryForObject(SQL,new Object[] { userName, password }, new UserMapper());
+		
+	}
+
+	@Override
+	public long getUserProgramId(Long id) {
+		String SQL = "select program_id from user_program where user_id = ?"; 
+		return jdbcTemplateObject.queryForLong(SQL,new Object[] { id });
+	}
+
+	@Override
+	public String getUserRole(Long id) {
+		String SQL = "select role_name from user u, user_role ur, role r where u.user_id=ur.user_id and " +
+				"ur.role_id=r.role_id and u.user_id = ?"; 
+		return jdbcTemplateObject.queryForObject(SQL, new Object[] { id }, String.class);
+	}
+	
+	
+
 }

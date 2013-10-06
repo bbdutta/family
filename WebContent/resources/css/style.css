@@ -1,0 +1,338 @@
+body {
+	background: #CACACA url(images/background.png) repeat-x;
+	font-family: "Trebuchet MS", Verdana, serif
+}
+#container {
+	margin: 0 auto;
+	width: 750px
+}
+#header {
+	width: 100%;
+	
+}
+#sub_header {
+	text-align: right;
+	font-weight: bold;
+	font-size: 18px;
+	color: #FFFFFF;
+	padding-right: 60px;
+	padding-bottom: 5px;
+	background-color: #A40008;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: .1em;
+}
+#main_content {
+	margin: 0 auto;
+	width: 100%;
+	background: #FFFFFF url('images/background_content.gif');
+	background-repeat: repeat-y
+} 
+#main_content_top {
+	background-color: #FFFFFF;
+	background-image: none;
+} 
+#main_content_bottom {
+	height: 30px;
+	background: #FFFFFF url('images/background_bottom.gif');
+}
+#footer {
+	text-align: center;
+	font-size: 12px;
+	margin: 10px auto
+}
+.content {
+	float: left;
+	width: 510px;
+	text-align: justify;
+	padding: 0 30px 0 30px;
+	font-size: 12px
+}
+.menu {
+	width: 139px;
+	float: right;
+	padding: 0 20px 0 20px;
+	border-left: #8C8484 1px solid;
+	font-size: 12px
+}
+
+#header h1 {
+	margin-bottom: 0px;
+	font-size: 28px;
+	font-weight: bold;
+	color: #A40008;
+	margin-top: 0px;
+}
+.content h2 {
+	margin-top: 0px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #A40008
+}
+
+#clear {
+	display: block;
+	clear: both;
+	width: 100%;
+	height:1px;
+	overflow:hidden;
+}
+a {
+	text-decoration: none;
+	color: #03C;
+}
+a:hover {
+	font-weight: bold;
+	text-decoration: underline
+}
+a.menu_link {
+	color: #000000;
+	font-weight: bold;
+	text-decoration: underline
+}
+a.menu_link:hover {
+	color: #A40008;
+	font-weight: bold;
+	text-decoration: none
+}
+.quote {
+	margin: 20px;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic
+}
+#loginButton{
+	background-color: #03C;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	height: 30px;
+	width: 100px;
+	border: thin solid #CCC;
+	margin-left: 250px;
+	font-size: 18px;
+	padding: 5px;
+}
+#loginForm {
+	margin-right: auto;
+	margin-left: auto;
+}
+#loginForm form table {
+	margin-right: auto;
+	margin-left: auto;
+	padding: 5px;
+}
+#main_content .content #loginForm #getPassword a {
+	color: #03C;
+	margin-left: 255px;
+	font-style: italic;
+	font-size: 11px;
+}
+#loginForm form table tr td {
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: .2em;
+}
+#inmatebutton   {
+	background-color: #03C;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	height: 22px;
+	width: 150px;
+	border: thin solid #CCC;
+	margin-right: auto;
+	margin-left: 0px;
+	font-size: 14px;
+}
+body form fieldset {
+	width: 850px;
+	margin-right: auto;
+	margin-left: 20px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-top: -1px;
+	margin-bottom: 5px;
+}
+body form fieldset p input {
+	margin-left: 25px;
+	font-size: 14px;
+}
+
+
+body form fieldset p select {
+	width: 175px;
+	margin-left: 25px;
+}
+body form fieldset p input#date {
+	width: 150px;
+	font-size: 16px;
+	margin-left: 25px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+#cmsubmit   {
+	background-color: #03C;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	height: 30px;
+	width: 100px;
+	border: thin solid #CCC;
+	font-size: 18px;
+	margin-left: 290px;
+}
+
+
+
+#main_content .content form fieldset #clientInfo {
+	font-size: 12px;
+	color: #A40008;
+	font-style: normal;
+	margin-right:5px;
+	margin-left: 5px;
+}
+
+#main_content .content form fieldset #clientInfo label{
+	font-size: 12px;
+	color: #A40008;
+	font-weight: bold;
+	font-style: italic;
+	margin-left: 10px;
+}
+
+#selfsuff h4 {
+	font-style: italic;
+	color: #A40008;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-indent: 5px;
+	margin-bottom: 2px;
+}
+#selfsuff h3 {
+	
+	color: #A40008;
+	font-size: 15px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-indent: 5px;
+}
+#selfsuff label {
+	width: 300px;
+	margin-right: 5px;
+	margin-left: 5px;
+	display: inline;
+	color: #000;
+	font-size: 12px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#cmForm h3{
+color: #A40008;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-indent: 5px;
+	margin-bottom: 2px;
+
+
+}
+#index h3{
+color: #A40008;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-indent: 5px;
+	margin-bottom: 2px;
+
+
+}
+#cmForm label {
+	width: 300px;
+	margin-right: 5px;
+	margin-left: -65px;
+	display: inline;
+	color: #000;
+	font-size: 12px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+body form fieldset p label {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width: 300px;
+	margin-right: 5px;
+	text-align: right;
+	float: left;
+	margin-left: -65px;
+	color: #000;
+	
+}
+
+#goalsandser p label {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width: 100px;
+	margin-right: 5px;
+	text-align: right;
+	float: left;
+	margin-left: -65px;
+	color: #000;
+	
+}
+
+#clientgoalsandser p label {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width: 100px;
+	margin-right: 5px;
+	text-align: right;
+	float: left;
+	margin-left: -65px;
+	color: #000;
+	
+}
+
+#container #main_content_top ul {
+	list-style-type: none;
+	display: inline;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+#container #main_content_top ul li {
+	display: inline;
+	margin-right: 25px;
+	float: right;
+	font-size: 12px;
+}
+#container #main_content_top ul #signedIn {
+	margin-right: 100px;
+}
+#subheader1 {
+	color: #FFF;
+	background-color: #A40008;
+	width: auto;
+	text-align: right;
+	padding-right: 200px;
+	font-size: 12px;
+	font-style: italic;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+#main_content .content form fieldset #cmForm #goalsandser p label {
+	margin-left: 10px;
+	color: #000;
+	text-align: left;
+}
+#main_content .content form fieldset #cmForm #goalsandser p input {
+	margin-left: 200px;
+}
+#container #main_content .content #index .params p label {
+	margin-right: 5px;
+	font-weight: bold;
+	
+}
+#container #main_content .content #index .params p input {
+	margin-right: 20px;
+}
+#container #main_content .content #index #format select {
+	font-size: 14px;
+	width: 100px;
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c19834a-e14a-4a91-9bee-d04759a6135e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="7f9102cd-cefe-4b44-8d5b-f3b9888466df"/>
+	<field name="attendedAllAppNum" class="java.lang.Number">
+		<fieldDescription><![CDATA[attendedAllAppNum]]></fieldDescription>
+	</field>
+	<field name="missedAppNum" class="java.lang.Number">
+		<fieldDescription><![CDATA[missedAppNum]]></fieldDescription>
+	</field>
+	<field name="stillInAssessmentNum" class="java.lang.Number">
+		<fieldDescription><![CDATA[stillInAssessmentNum]]></fieldDescription>
+	</field>
+	<field name="startDate" class="java.lang.String">
+		<fieldDescription><![CDATA[startDate]]></fieldDescription>
+	</field>
+	<field name="endDate" class="java.lang.String">
+		<fieldDescription><![CDATA[endDate]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="cb946133-6997-4d0e-ab48-58129e55b03c" x="0" y="0" width="555" height="47"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fresh Start Treatment Compliance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b386bba9-1ac2-4aed-ba13-c84e3b9e2fa9" x="0" y="27" width="78" height="20"/>
+				<textElement/>
+				<text><![CDATA[Start Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e276f77f-973a-43b3-8e33-dc285e8b4ae6" x="78" y="27" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{startDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="05853bd1-e199-4458-a779-06fc04a1d8ce" x="161" y="27" width="67" height="20"/>
+				<textElement/>
+				<text><![CDATA[End Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e2e84daa-36b6-4b8d-9dfe-6f759d307f41" x="228" y="27" width="70" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{endDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6114ace2-ff1b-4412-b426-256ddf68a834" x="128" y="0" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Outcome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8dfe3c36-5b06-4044-a91e-1a1568251768" x="432" y="0" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Measure]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bcba84dd-16fc-4356-855a-14eaf2ac3345" x="22" y="20" width="330" height="44"/>
+				<textElement/>
+				<text><![CDATA[Client has maintained compliance with treatment schedules.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e4ee0cf0-a35b-4183-abad-4b85c8f75ac1" x="372" y="20" width="183" height="44"/>
+				<textElement/>
+				<text><![CDATA[60% of clients will remain conpliance with established treatment schedules.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="7b91e36e-ea1e-46ec-80ee-7374271617aa" x="0" y="10" width="311" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total # of clients who attended all scheduled appointments:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="08fafa5f-691c-481d-8602-97c309c5dee4" x="0" y="40" width="311" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total # clients who missed 1 or more scheduled appointments:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd76d95b-9e6a-47ce-a49d-6857394f1fde" x="0" y="71" width="311" height="20"/>
+				<textElement/>
+				<text><![CDATA[# still in assessment/intake period:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="33a87b94-056e-4462-bd1f-2a452da7c564" x="311" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{attendedAllAppNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="174a715b-2a45-4677-8b38-3053edee02db" x="311" y="40" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{missedAppNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cc298ede-c333-41f1-86eb-8fec5ebadaaa" x="311" y="71" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{stillInAssessmentNum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

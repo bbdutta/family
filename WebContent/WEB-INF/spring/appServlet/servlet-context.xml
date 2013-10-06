@@ -3,36 +3,61 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:p="http://www.springframework.org/schema/p"
 xmlns:context="http://www.springframework.org/schema/context"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:tx="http://www.springframework.org/schema/tx"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/context
-http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+
+
+    <!-- the mvc resources tag does the magic -->
+ 	<mvc:resources mapping="/resources/**" location="/resources/" />
+ 	
+ 	<mvc:annotation-driven />
 
 	<context:component-scan base-package="edu.fairfield.controllers"/>
 
- 
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/views/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
+    <!-- also add the following beans to get rid of some exceptions -->
+ 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+	<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location" value="/WEB-INF/spring/appServlet/jasper-view.xml"/>
+        <property name="order" value="0"/>
+    </bean> 
+     	
+ 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix"><value>/WEB-INF/views/</value></property>
+		<property name="suffix"><value>.jsp</value></property>
+		<property name="order" value="1" />
 	</bean>
 
 	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
 	 	<property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
-	 	<property name="url" value="jdbc:mysql://localhost:3306/TEST"/> 
-	 	<property name="username" value="family"/> <property name="password" value="family"/> 
+	 	<property name="url" value="jdbc:mysql://localhost:3306/test"/> 
+	 	<property name="username" value="family"/> 
+	 	<property name="password" value="family"/> 
 	 </bean>
 
 	<!-- Definition for clientJDBCTemplate bean --> 
 	<bean id="clientJDBCTemplate" class="edu.fairfield.db.ClientJDBCTemplate"> 
 		<property name="dataSource" ref="dataSource" /> 
 	</bean>
+	<!-- Definition for clientJDBCTemplate bean --> 
+	<bean id="caseJDBCTemplate" class="edu.fairfield.db.CaseJDBCTemplate"> 
+		<property name="dataSource" ref="dataSource" /> 
+	</bean>
 	<!-- Definition for userJDBCTemplate bean --> 
 	<bean id="userJDBCTemplate" class="edu.fairfield.db.UserJDBCTemplate"> 
 		<property name="dataSource" ref="dataSource" /> 
 	</bean>
-
+	<bean id="reportJDBCTemplate" class="edu.fairfield.db.ReportJDBCTemplate"> 
+		<property name="dataSource" ref="dataSource" /> 
+	</bean>
+	
 </beans>

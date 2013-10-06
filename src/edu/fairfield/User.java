@@ -10,6 +10,8 @@ public class User {
 	private String lastName;
 	private String email;
 	private String phoneNum;
+	private long roleId;
+	private long programId;
 	
 	public long getUserId() {
 		return userId;
@@ -58,6 +60,18 @@ public class User {
 	}
 	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
+	}
+	public long getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(long roleId) {
+		this.roleId = roleId;
+	}
+	public long getProgramId() {
+		return programId;
+	}
+	public void setProgramId(long programId) {
+		this.programId = programId;
 	}
 	
 	
