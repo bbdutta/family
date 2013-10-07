@@ -7,8 +7,7 @@ import java.util.Map;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -30,7 +29,7 @@ public class ReportController {
 	
 	private @Autowired ApplicationContext appContext;
 	private ReportJDBCTemplate reportJDBCTemplate;
-	private static final Log log = LogFactory.getLog(ReportController.class);
+	private static final Logger logger = Logger.getLogger(ReportController.class);
 	
 	@RequestMapping(value = "rptHome", method = { RequestMethod.GET, RequestMethod.POST }) 
 	public String rptHome(ModelMap model) {
@@ -51,6 +50,9 @@ public class ReportController {
 								@RequestParam(value="end-date") String endDate,
 								@RequestParam(value="rep-fmt") String repFmt,
 								ModelAndView modelAndView) { 
+		
+		logger.info("ReportController::genRpt: Report -> "+ repName +" : startDate -> "+ repName +" : startDate -> "+ startDate +" : endDate -> "+ endDate);
+		
         Map<String,Object> parameterMap = new HashMap<String,Object>();
         
         reportJDBCTemplate = (ReportJDBCTemplate)appContext.getBean("reportJDBCTemplate");

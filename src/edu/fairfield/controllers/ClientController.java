@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,9 @@ public class ClientController {
 	
 	private @Autowired ApplicationContext appContext;
 	private ClientJDBCTemplate clientJDBCTemplate;
-	
+
+	private static final Logger logger = Logger.getLogger(ClientController.class);
+
 	@RequestMapping(value = "client", method = RequestMethod.GET) 
 	public ModelAndView client() { 
 		return new ModelAndView("client", "command", new Client()); 
@@ -325,6 +328,7 @@ public class ClientController {
 		try {
 			dob.setTime(dateSdf.parse(client.getDob()));
 			doa.setTime(dateSdf.parse(client.getAdmittedOn()));
+			logger.info("ClientController::addBhnClient: dob -> "+dateSdf.parse(client.getDob())+" : doa -> "+dateSdf.parse(client.getAdmittedOn()));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
