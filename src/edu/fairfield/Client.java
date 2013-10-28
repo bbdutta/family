@@ -67,6 +67,7 @@ public class Client {
 		refSrcList.add("Halfway House");
 		refSrcList.add("Counselor");
 		refSrcList.add("Home");
+		refSrcList.add("RSAT");
 		
 		housingList.add("Home");
 		housingList.add("Half-way house");
@@ -101,12 +102,14 @@ public class Client {
 		trtModalityList.add("Family counseling");
 		trtModalityList.add("Couples counseling");
 		trtModalityList.add("Group counseling");
+		trtModalityList.add("None");
 		
 		medicationAssistedList.add("");
 		medicationAssistedList.add("Methadone");
 		medicationAssistedList.add("Anti-buse");
 		medicationAssistedList.add("Vitriol");
 		medicationAssistedList.add("Psychotropic medication");
+		medicationAssistedList.add("None");
 
 	}
 	

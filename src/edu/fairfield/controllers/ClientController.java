@@ -414,9 +414,11 @@ public class ClientController {
 		Calendar dod = Calendar.getInstance();
 		
 		try {
+			logger.info("ClientController::addBhnDischarge: dod -> "+client.getDod());
 			dod.setTime(dateSdf.parse(client.getDod()));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+			dod = null;
+			logger.info("ClientController::addBhnDischarge: Setting DOD to Null");
 			e.printStackTrace();
 		}
 

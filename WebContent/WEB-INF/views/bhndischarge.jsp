@@ -13,11 +13,11 @@
 <script type="text/javascript">
 function validateCase()
 {
-	if(document.getElementById("dod").value=="")
-	{
-		alert("Please enter Discharge Date");                                   
-		return false;
-	}
+// 	if(document.getElementById("dod").value=="")
+// 	{
+// 		alert("Please enter Discharge Date");                                   
+// 		return false;
+// 	}
 	if(document.getElementById("educationLevel").value=="")
 	{
 		alert("Education Level is mandatory");                                   

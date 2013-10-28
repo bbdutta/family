@@ -34,11 +34,15 @@ public class ClientJDBCTemplate implements ClientDAO {
 				"values (?, ?, ?, ?, ?, ?, ?, ?)"; 
 		try {
 			jdbcTemplateObject.update( SQL, inmateNum, firstName, middleName, lastName, gender, dob, educationLevel, race);
+			logger.info("ClientJDBCTemplate::create: inmateNum -> "+inmateNum+" : firstName -> "+firstName+" : middleName -> "+middleName+" : lastName -> "+
+					lastName+" : gender -> "+gender+" : dob -> "+dob+" : educationLevel -> "+educationLevel+" : race -> "+race);
 		} catch (DuplicateKeyException d) {d.printStackTrace();}
 		SQL = "select client_id from client where inmate_number = ?"; 
 		long clientId =  jdbcTemplateObject.queryForLong(SQL,new Object[] { inmateNum });
 		SQL = "insert into client_program (client_id, program_id, date_admitted, referral_source, tanf_eligible) values (?, ?, ?, ?, ?)";
 		jdbcTemplateObject.update( SQL, clientId, programId, doa, referralSource, tanfEligible);
+		logger.info("ClientJDBCTemplate::create: doa -> "+doa+" : referralSource -> "+referralSource+" : tanfEligible -> "+tanfEligible+" : clientId -> "+
+				clientId+" : programId -> "+programId);
 		SQL = "insert into client_employment (client_id, program_id) values (?, ?)";
 		jdbcTemplateObject.update( SQL, clientId, programId);
 		System.out.println("Created Record Name=" + firstName + " " + lastName); 

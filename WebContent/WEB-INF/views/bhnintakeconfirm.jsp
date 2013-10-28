@@ -70,6 +70,7 @@
    		   <c:if test="${command.referralSource == 'Halfway House'}">Halfway House</c:if>
    		   <c:if test="${command.referralSource == 'Counselor'}">Counselor</c:if>
    		   <c:if test="${command.referralSource == 'Home'}">Home</c:if>
+   		   <c:if test="${command.referralSource == 'RSAT'}">RSAT</c:if>
 	 		   
 	    </p> 
 	    
