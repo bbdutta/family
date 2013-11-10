@@ -76,19 +76,24 @@ function validate()
    <div class="params"> 
 		<p><label>Start Date</label>
 		<input type="date" id="start-date" name="start-date">
-		
-		 <label> End Date</label>
+		<label> End Date</label>
 		<input type="date" id="end-date" name="end-date"></p>
-		<br>
+
+		<p>
+		<label> Sort By</label>
+		<select name="order-by" size="1">
+		  <option value="FIRST">First Name</option>
+		  <option value="LAST">Last Name</option>
+		</select></p>
+
+		<p>
 		<label> Report Format</label>
-		<br>
-		
 		<select name="rep-fmt" size="1">
 		  <option value="PDF">Pdf</option>
 		  <!-- <option value="XLS">Excel</option>
 		  <option value="CSV">Csv</option>
 		  <option value="HTML">Html</option> -->
-		</select>
+		</select></p>
 		</div>
 		<br>
 

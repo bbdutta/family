@@ -41,6 +41,11 @@
           p:url="classpath:bhnclients.jrxml"
           p:reportDataKey="rptdatasource" />
 
+    <bean id="xlsBHNClientReport"
+          class="org.springframework.web.servlet.view.jasperreports.JasperReportsXlsView"
+          p:url="classpath:bhnclients.jrxml"
+          p:reportDataKey="rptdatasource" />
+
     <bean id="pdfBHNSubFreeReport"
           class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
           p:url="classpath:bhnsubstancefree.jrxml"

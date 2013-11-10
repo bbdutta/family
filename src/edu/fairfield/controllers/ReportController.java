@@ -48,6 +48,7 @@ public class ReportController {
 	public ModelAndView genRpt(	@RequestParam(value="rep-name") String repName,
 								@RequestParam(value="start-date") String startDate,
 								@RequestParam(value="end-date") String endDate,
+								@RequestParam(value="order-by") String orderBy,
 								@RequestParam(value="rep-fmt") String repFmt,
 								ModelAndView modelAndView) { 
 		
@@ -64,7 +65,7 @@ public class ReportController {
         JRDataSource JRdataSource = null;
 		
         if ("FS_CLIENT_LIST".equals(repName)) {
-        	clientList = reportJDBCTemplate.listClients(1L, startDate, endDate);
+        	clientList = reportJDBCTemplate.listClients(1L, startDate, endDate, orderBy);
         	JRdataSource = new JRBeanCollectionDataSource(clientList);
             parameterMap.put("rptdatasource", JRdataSource);
             if ("PDF".equals(repFmt))
@@ -99,11 +100,13 @@ public class ReportController {
             	modelAndView = new ModelAndView("pdfFSProgCompReport", parameterMap);
         }
         if ("BHN_CLIENT_LIST".equals(repName)) {
-        	clientList = reportJDBCTemplate.listClients(2L, startDate, endDate);
+        	clientList = reportJDBCTemplate.listClients(2L, startDate, endDate, orderBy);
         	JRdataSource = new JRBeanCollectionDataSource(clientList);
             parameterMap.put("rptdatasource", JRdataSource);
             if ("PDF".equals(repFmt))
             	modelAndView = new ModelAndView("pdfBHNClientReport", parameterMap);
+            if ("XLS".equals(repFmt))
+            	modelAndView = new ModelAndView("xlsBHNClientReport", parameterMap);
         }
         if ("BHN_SUB_FREE".equals(repName)) {
         	substanceFreeRpt = reportJDBCTemplate.generateSubFreeRpt(2L, startDate, endDate);

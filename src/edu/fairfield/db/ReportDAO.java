@@ -30,11 +30,11 @@ public interface ReportDAO {
 	 * This is the method to be used to list down 
 	 * all the records from the Client table. 
 	 */
-	public List<Client> listClients(long programId, String startDate, String endDate); 
+	public List<Client> listClients(long programId, String startDate, String endDate, String orderBy); 
 	
-	 public List<SubstanceFreeRpt> generateSubFreeRpt(long programId, String startDate, String endDate);
-	 public List<DischargePlanRpt> generateDischargePlanRpt(long programId, String startDate, String endDate);
-	 public List<TreatmentCompRpt> generateTreatmentCompRpt(long programId, String startDate, String endDate);
-	 public List<ProgramCompRpt> generateProgramCompRpt(long programId, String startDate, String endDate);
+	public List<SubstanceFreeRpt> generateSubFreeRpt(long programId, String startDate, String endDate);
+	public List<DischargePlanRpt> generateDischargePlanRpt(long programId, String startDate, String endDate);
+	public List<TreatmentCompRpt> generateTreatmentCompRpt(long programId, String startDate, String endDate);
+	public List<ProgramCompRpt> generateProgramCompRpt(long programId, String startDate, String endDate);
 }
 

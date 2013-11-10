@@ -32,13 +32,18 @@ public class ReportJDBCTemplate implements ReportDAO {
 	}
 
 	@Override
-	public List<Client> listClients(long programId, String startDate, String endDate) {
+	public List<Client> listClients(long programId, String startDate, String endDate, String orderBy) {
 		String SQL = " SELECT c.*, p.* " +
 				" FROM client c, client_program p " +
 				" where c.client_id = p.client_id " +
 				" and p.date_admitted >= STR_TO_DATE('" + startDate + "','%Y-%m-%d') " +
 				" and (p.date_discharged <= STR_TO_DATE('" + endDate + "','%Y-%m-%d') or p.date_discharged is null) " +
 				" and p.program_id = " + programId; 
+		if ("FIRST".equals(orderBy))
+			SQL = SQL + " order by c.first_name";
+		if ("LAST".equals(orderBy))
+			SQL = SQL + " order by c.last_name";
+		
 		return jdbcTemplateObject.query(SQL, new ClientMapper());
 	}
 
