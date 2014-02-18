@@ -90,8 +90,8 @@ function validate()
 		<label> Report Format</label>
 		<select name="rep-fmt" size="1">
 		  <option value="PDF">Pdf</option>
-		  <!-- <option value="XLS">Excel</option>
-		  <option value="CSV">Csv</option>
+		  <option value="XLS">Excel</option>
+		  <!-- <option value="CSV">Csv</option>
 		  <option value="HTML">Html</option> -->
 		</select></p>
 		</div>
