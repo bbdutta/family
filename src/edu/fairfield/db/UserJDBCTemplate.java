@@ -39,8 +39,8 @@ public class UserJDBCTemplate implements UserDAO {
 
 	@Override
 	public List<User> listUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		String SQL = "SELECT u.* FROM user u"; 
+		return jdbcTemplateObject.query(SQL, new UserMapper());
 	}
 
 	@Override
@@ -70,6 +70,36 @@ public class UserJDBCTemplate implements UserDAO {
 		return jdbcTemplateObject.queryForObject(SQL, new Object[] { id }, String.class);
 	}
 	
-	
+	@Override
+	public int createUserRole(Long userId, Long roleId) {
+		String selSQL = "select count(*) cnt from user_role where user_id = ?";
+		long cnt = jdbcTemplateObject.queryForObject(selSQL, new Object[] { userId }, Long.class);
+		int result = 0;
+		if (cnt < 1) {
+			String insSQL = "insert into user_role (user_id, role_id) " +
+					"values (?, ?)"; 
+			result = jdbcTemplateObject.update( insSQL, userId, roleId); 
+			System.out.println("Created Role for UserID" + userId + " RoleID" + roleId); 
+		} else {
+			result = -1;
+		}
+		return result;
+	}	
+
+	@Override
+	public int createUserProgram(Long userId, Long programId) {
+		String selSQL = "select count(*) cnt from user_program where user_id = ?";
+		long cnt = jdbcTemplateObject.queryForObject(selSQL, new Object[] { userId }, Long.class);
+		int result = 0;
+		if (cnt < 1) {
+			String insSQL = "insert into user_program (user_id, program_id) " +
+					"values (?, ?)"; 
+			result = jdbcTemplateObject.update( insSQL, userId, programId); 
+			System.out.println("Created Program for UserID" + userId + " ProgramID" + programId); 
+		} else {
+			result = -1;
+		}
+		return result;
+	}	
 
 }

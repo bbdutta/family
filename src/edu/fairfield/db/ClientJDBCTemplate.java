@@ -10,7 +10,6 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import edu.fairfield.Client;
-import edu.fairfield.controllers.ReportController;
 
 public class ClientJDBCTemplate implements ClientDAO {
 

@@ -30,7 +30,17 @@ your password click the link under the 'Submit' button. </p>
 <td><form:input type="password" path="password" /></td>
 
 </tr>
+
+<tr>
+<td colspan="2">
+<c:if test="${errMsg != ''}">
+	<font color="red"><b>${errMsg}</b></font>
+</c:if>
+</td>
+</tr>
+
 </table>
+
 
 <input type="submit" name="loginButton" id="loginButton" value="Submit">
 

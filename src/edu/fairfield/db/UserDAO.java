@@ -63,4 +63,8 @@ public interface UserDAO {
 	 * 
 	 */ 
 	public String getUserRole(Long id); 
+	
+	public int createUserRole(Long userId, Long roleId);
+	
+	public int createUserProgram(Long userId, Long programId);
 }
