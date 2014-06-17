@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.fairfield.Client;
+import edu.fairfield.Rsat;
 import edu.fairfield.db.ClientJDBCTemplate;
 
 @Controller
@@ -463,6 +464,141 @@ public class ClientController {
 		model.addAttribute("clientId", client.getClientId());
 		model.addAttribute("DISCHARGE_SAVE_STATUS", "");
 		return new ModelAndView("bhndischarge", "command", client); 
+	}
+
+	@RequestMapping(value = "bhnRsat", method = { RequestMethod.GET, RequestMethod.POST }) 
+	public ModelAndView bhnRsat(@RequestParam(value="inmate-num") long inmateNum,
+			@RequestParam(value="program-id") long programId, 
+			ModelMap model) { 
+
+		model.addAttribute("serviceList", Rsat.serviceList);
+		model.addAttribute("nonCompletionList", Rsat.nonCompletionList);
+		model.addAttribute("healthCareList", Rsat.healthCareList);
+		
+		ClientJDBCTemplate clientJDBCTemplate = (ClientJDBCTemplate)appContext.getBean("clientJDBCTemplate");
+		Client client = null;
+		Rsat rsat = null;
+
+
+		if (inmateNum !=0) {
+			try {
+				client = clientJDBCTemplate.getClient(inmateNum, programId);
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+
+			if(client == null) {
+				model.addAttribute("RSAT_AVAILABLE", "The Given Inmate Number "+inmateNum+" is Not available, Please Add The client: ");
+				return new ModelAndView("forward:/bhnHome");
+			} else {
+				try {
+					rsat = clientJDBCTemplate.getRsat(inmateNum, programId);
+				} catch(Exception ex) {
+					ex.printStackTrace();
+				}
+				if (rsat != null) {
+					rsat.setClient(client);
+					model.addAttribute("inmateNum", client.getInmateNum());
+					model.addAttribute("lastName", client.getLastName());
+					return new ModelAndView("bhnrsat", "command", rsat);
+				} else {
+					model.addAttribute("inmateNum", client.getInmateNum());
+					model.addAttribute("lastName", client.getLastName());
+					rsat = new Rsat();
+					rsat.setClient(client);
+					return new ModelAndView("bhnrsat", "command", rsat);
+				}
+			}
+		}
+		else
+			return new ModelAndView("bhnintake", "command", new Client()); 
+	}
+
+	@RequestMapping(value = "confirmBhnRsat", method = RequestMethod.POST) 
+	public ModelAndView confirmBhnRsat(@ModelAttribute("SpringWeb")Rsat rsat, ModelMap model) {
+		
+		model.addAttribute("RSAT_SAVE_STATUS", "");
+		return new ModelAndView("bhnconfirmrsat", "command", rsat); 
+	}
+
+	@RequestMapping(value = "addBhnRsat", method = RequestMethod.POST) 
+	public ModelAndView addBhnRsat(@ModelAttribute("SpringWeb")Rsat rsat, ModelMap model) {
+		
+		SimpleDateFormat dateSdf = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar asmtDate = Calendar.getInstance();
+		
+		try {
+			logger.info("ClientController::addBhnRsat: asmtDate -> "+rsat.getAssmtDate());
+			asmtDate.setTime(dateSdf.parse(rsat.getAssmtDate()));
+		} catch (ParseException e) {
+			asmtDate = null;
+			logger.info("ClientController::addBhnRsat: Setting asmtDate to Null");
+			e.printStackTrace();
+		}
+		Calendar aftercareEnrollDate = Calendar.getInstance();
+		try {
+			logger.info("ClientController::addBhnRsat: aftercareEnrollDate -> "+rsat.getAftercareEnrollDate());
+			aftercareEnrollDate.setTime(dateSdf.parse(rsat.getAftercareEnrollDate()));
+		} catch (ParseException e) {
+			aftercareEnrollDate = null;
+			logger.info("ClientController::addBhnRsat: Setting aftercareEnrollDate to Null");
+			e.printStackTrace();
+		}
+		
+		Calendar serviceDate = Calendar.getInstance();
+		try {
+			logger.info("ClientController::addBhnRsat: serviceDate -> "+rsat.getDateOfService());
+			serviceDate.setTime(dateSdf.parse(rsat.getDateOfService()));
+		} catch (ParseException e) {
+			serviceDate = null;
+			logger.info("ClientController::addBhnRsat: Setting serviceDate to Null");
+			e.printStackTrace();
+		}
+		Calendar compDate = Calendar.getInstance();
+		try {
+			logger.info("ClientController::addBhnRsat: compDate -> "+rsat.getDateOfCompletion());
+			compDate.setTime(dateSdf.parse(rsat.getDateOfCompletion()));
+		} catch (ParseException e) {
+			compDate = null;
+			logger.info("ClientController::addBhnRsat: Setting compDate to Null");
+			e.printStackTrace();
+		}
+		Calendar drugTestDate = Calendar.getInstance();
+		try {
+			logger.info("ClientController::addBhnRsat: drugTestDate -> "+rsat.getDateOfDrugTest());
+			drugTestDate.setTime(dateSdf.parse(rsat.getDateOfDrugTest()));
+		} catch (ParseException e) {
+			drugTestDate = null;
+			logger.info("ClientController::addBhnRsat: Setting drugTestDate to Null");
+			e.printStackTrace();
+		}
+
+		clientJDBCTemplate = (ClientJDBCTemplate)appContext.getBean("clientJDBCTemplate"); 
+		clientJDBCTemplate.addRsat(rsat.getClient().getClientId(), rsat.getClient().getProgramId(), rsat.getReceivedRiskAsmt(),
+				asmtDate, rsat.getToolNameUsed(), rsat.getHighCrimeogenicRisk(), rsat.getCompletedIndTrtPlan(), 
+				rsat.getEnrolledRsatAftercare(), aftercareEnrollDate, rsat.getContCareAgmt(), serviceDate, rsat.getTypeOfService(), 
+				rsat.getOtherService(), rsat.getCompAllAftercareReq(), compDate, rsat.getReasonNonCompletion(), 
+				rsat.getOtherReason(), drugTestDate, rsat.getTestedPositiveSubstance(), rsat.getHealthCare(), 
+				rsat.getEnrolledInMedicaid());
+		model.addAttribute("serviceList", Rsat.serviceList);
+		model.addAttribute("nonCompletionList", Rsat.nonCompletionList);
+		model.addAttribute("healthCareList", Rsat.healthCareList);
+		model.addAttribute("RSAT_SAVE_STATUS", "Rsat information saved successfully.");
+
+		return new ModelAndView("bhnconfirmrsat", "command", rsat); 
+	}
+
+	
+	@RequestMapping(value = "backBhnRsat", method = RequestMethod.POST) 
+	public ModelAndView backBhnRsat(@ModelAttribute("SpringWeb")Rsat rsat, ModelMap model) {
+		
+		model.addAttribute("serviceList", Rsat.serviceList);
+		model.addAttribute("nonCompletionList", Rsat.nonCompletionList);
+		model.addAttribute("healthCareList", Rsat.healthCareList);
+		model.addAttribute("clientId", rsat.getClient().getClientId());
+		model.addAttribute("RSAT_SAVE_STATUS", "");
+
+		return new ModelAndView("bhnrsat", "command", rsat); 
 	}
 
 }

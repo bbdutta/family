@@ -10,6 +10,7 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import edu.fairfield.Client;
+import edu.fairfield.Rsat;
 
 public class ClientJDBCTemplate implements ClientDAO {
 
@@ -43,6 +44,8 @@ public class ClientJDBCTemplate implements ClientDAO {
 		logger.info("ClientJDBCTemplate::create: doa -> "+doa+" : referralSource -> "+referralSource+" : tanfEligible -> "+tanfEligible+" : clientId -> "+
 				clientId+" : programId -> "+programId);
 		SQL = "insert into client_employment (client_id, program_id) values (?, ?)";
+		jdbcTemplateObject.update( SQL, clientId, programId);
+		SQL = "insert into bhn_rsat (client_id, program_id) values (?, ?)";
 		jdbcTemplateObject.update( SQL, clientId, programId);
 		System.out.println("Created Record Name=" + firstName + " " + lastName); 
 	}
@@ -93,7 +96,26 @@ public class ClientJDBCTemplate implements ClientDAO {
 		System.out.println("Updated Record Name=" + firstName + " " + lastName); 
 	}
 
+	@Override
+	public Rsat getRsat(long inmateNum, long programId) {
+		String SQL = "SELECT r.* from client c, bhn_rsat r where c.inmate_number = " + 
+				inmateNum + " and c.client_id = r.client_id and r.program_id = " + programId; 
+		return jdbcTemplateObject.queryForObject(SQL, new RsatMapper());  
+	}
 
-
+	@Override
+	public void addRsat(Long clientId, Long programId, String recRiskAsmt, Calendar asmtDate, String toolName, String highCrimeogenicRisk,
+			String compIndTrtPlan, String enrollRsatAftercare, Calendar aftercareEnrollDate, String contCareAgmt, Calendar serviceDate, String serviceType,    
+			String otherService, String compAllAftercareReq, Calendar compDate, String reasonNonComp, String otherReason, 
+			Calendar drugTestDate, String testedPositive, String healthCareProvider, String enrolledMedicaid) {
+		String SQL = "UPDATE bhn_rsat set received_risk_asmt = ?,assmt_date = ?,toolname_used = ?,high_crimeogenic_risk =?,"
+				+ "completed_ind_trt_plan = ?,enrolled_rsat_aftercare = ?,aftercare_enroll_date = ?,cont_care_agmt = ?,service_date = ?,"
+				+ "service_type = ?, other_service = ?,comp_all_aftercare_req = ?,completion_date = ?,reason_non_completion = ?,"
+				+ "other_reason = ?, drug_test_date = ?, tested_positive_sub = ?, health_care_provider = ?, enrolled_medicaid = ?"
+				+ " where client_id = ? and program_id = ?"; 
+		jdbcTemplateObject.update(SQL, recRiskAsmt, asmtDate, toolName, highCrimeogenicRisk, compIndTrtPlan, enrollRsatAftercare, 
+				aftercareEnrollDate, contCareAgmt, serviceDate, serviceType, otherService, compAllAftercareReq, compDate, reasonNonComp, otherReason, 
+				drugTestDate, testedPositive, healthCareProvider, enrolledMedicaid, clientId, programId); 
+	}
 
 }

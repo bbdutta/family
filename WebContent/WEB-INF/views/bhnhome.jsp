@@ -47,9 +47,9 @@ Enter Inmate Number and click submit to access the form: <br>
 <input type="submit" id="inmatebutton" value="Submit">
 </h4>
 </form>    
+
 <h3>Discharge Form</h3>
 <font color="red"><b>${DISCHARGE_AVAILABLE}</b></font>
-
 <h4>To enter Discharge Form:<br> Enter Inmate number and click submit to access the form: <br>
 <form method="POST" action="bhnDischarge">
 <input type="hidden" name="program-id" value="2"/>
@@ -57,7 +57,18 @@ Enter Inmate Number and click submit to access the form: <br>
 <input type="submit" id="inmatebutton" value="Submit">
 </h4>
 </form>
-    </div>
+
+<h3>RSAT Form</h3>
+<font color="red"><b>${RSAT_AVAILABLE}</b></font>
+<h4>To enter RSAT Form:<br> Enter Inmate number and click submit to access the form: <br>
+<form method="POST" action="bhnRsat">
+<input type="hidden" name="program-id" value="2"/>
+<input name="inmate-num" id="inmateNum"/>
+<input type="submit" id="inmatebutton" value="Submit">
+</h4>
+</form>
+
+</div>
 </div>
 
 <div class="menu"></div>

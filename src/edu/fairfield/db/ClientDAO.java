@@ -2,9 +2,11 @@ package edu.fairfield.db;
 
 import java.util.Calendar;
 import java.util.List; 
+
 import javax.sql.DataSource;
 
 import edu.fairfield.Client;
+import edu.fairfield.Rsat;
 
 public interface ClientDAO {
 
@@ -55,4 +57,13 @@ public interface ClientDAO {
 	 */ 
 	public void update(long inmateNum, String firstName, String middleName, String lastName, String gender, Calendar dob, String educationLevel, Calendar doa, 
 			String race, String referralSource, String tanfEligible, long clientId, long programId);
+
+	public Rsat getRsat(long inmateNum, long programId);
+	
+	public void addRsat(Long clientId, Long programId, String recRiskAsmt, Calendar asmtDate, String toolName, String highCrimeogenicRisk,
+			String compIndTrtPlan, String enrollRsatAftercare, Calendar aftercareEnrollDate, String contCareAgmt, Calendar serviceDate, String serviceType,    
+			String otherService, String compAllAftercareReq, Calendar compDate, String reasonNonComp, String otherReason, 
+			Calendar drugTestDate, String testedPositive, String healthCareProvider, String enrolledMedicaid); 
+
+
 }
