@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c19834a-e14a-4a91-9bee-d04759a6135e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="219"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="7f9102cd-cefe-4b44-8d5b-f3b9888466df"/>
+	<field name="eviBasedTrt" class="java.lang.String">
+		<fieldDescription><![CDATA[eviBasedTrt]]></fieldDescription>
+	</field>
+	<field name="eviBasedDesc" class="java.lang.String">
+		<fieldDescription><![CDATA[eviBasedDesc]]></fieldDescription>
+	</field>
+	<field name="noOfDirectStaff" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfDirectStaff]]></fieldDescription>
+	</field>
+	<field name="startDate" class="java.lang.String">
+		<fieldDescription><![CDATA[startDate]]></fieldDescription>
+	</field>
+	<field name="endDate" class="java.lang.String">
+		<fieldDescription><![CDATA[endDate]]></fieldDescription>
+	</field>
+	<field name="noOfHighTrtNeed" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfHighTrtNeed]]></fieldDescription>
+	</field>
+	<field name="noOfCompIndTrtPlan" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfCompIndTrtPlan]]></fieldDescription>
+	</field>
+	<field name="noOfRsatAftercareEn" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfRsatAftercareEn]]></fieldDescription>
+	</field>
+	<field name="noOfNewAftercareEn" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNewAftercareEn]]></fieldDescription>
+	</field>
+	<field name="noOfNewTransPlan" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNewTransPlan]]></fieldDescription>
+	</field>
+	<field name="noOfServiced" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfServiced]]></fieldDescription>
+	</field>
+	<field name="noOfSuccessComp" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfSuccessComp]]></fieldDescription>
+	</field>
+	<field name="noOfNonComp" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNonComp]]></fieldDescription>
+	</field>
+	<field name="noOfComp3m" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfComp3m]]></fieldDescription>
+	</field>
+	<field name="noOfComp6m" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfComp6m]]></fieldDescription>
+	</field>
+	<field name="noOfComp9m" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfComp9m]]></fieldDescription>
+	</field>
+	<field name="noOfComp10m" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfComp10m]]></fieldDescription>
+	</field>
+	<field name="noOfNonComp3m" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNonComp3m]]></fieldDescription>
+	</field>
+	<field name="noOfNonComp6m" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNonComp6m]]></fieldDescription>
+	</field>
+	<field name="noOfNonComp9m" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNonComp9m]]></fieldDescription>
+	</field>
+	<field name="noOfNonComp10m" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNonComp10m]]></fieldDescription>
+	</field>
+	<field name="noOfPartiTestBeforeAdm" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfPartiTestBeforeAdm]]></fieldDescription>
+	</field>
+	<field name="noOfPartiTestDuringRpt" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfPartiTestDuringRpt]]></fieldDescription>
+	</field>
+	<field name="noOfPartiTestAfterComp" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfPartiTestAfterComp]]></fieldDescription>
+	</field>
+	<field name="noOfPartiTestPosAfterComp" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfPartiTestPosAfterComp]]></fieldDescription>
+	</field>
+	<field name="provdSerToNonIncar" class="java.lang.String">
+		<fieldDescription><![CDATA[provdSerToNonIncar]]></fieldDescription>
+	</field>
+	<field name="provdSerToNonIncarDesc" class="java.lang.String">
+		<fieldDescription><![CDATA[provdSerToNonIncarDesc]]></fieldDescription>
+	</field>
+	<field name="noOfPartiHealthCover" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfPartiHealthCover]]></fieldDescription>
+	</field>
+	<field name="noOfPartiMedicaid" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfPartiMedicaid]]></fieldDescription>
+	</field>
+	<field name="noOfNewPartiHealthCover" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNewPartiHealthCover]]></fieldDescription>
+	</field>
+	<field name="noOfNewPartiMedicaid" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfNewPartiMedicaid]]></fieldDescription>
+	</field>
+	<field name="accessToOtherService" class="java.lang.String">
+		<fieldDescription><![CDATA[accessToOtherService]]></fieldDescription>
+	</field>
+	<field name="noOfMentalHealthProv" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfMentalHealthProv]]></fieldDescription>
+	</field>
+	<field name="noOfSubAbuseProv" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfSubAbuseProv]]></fieldDescription>
+	</field>
+	<field name="noOfPriCareProv" class="java.lang.Number">
+		<fieldDescription><![CDATA[noOfPriCareProv]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="47" uuid="cb946133-6997-4d0e-ab48-58129e55b03c"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Behavioral Health RSAT Report]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="78" y="27" width="65" height="20" uuid="55464440-42cd-4a87-b0e3-90dc1ef7570d"/>
+				<textFieldExpression><![CDATA[$F{startDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="161" y="27" width="67" height="20" uuid="0f406035-adb9-4128-8b9a-60a255cc2c1c"/>
+				<text><![CDATA[End Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="228" y="27" width="70" height="20" uuid="be45f432-4aa4-4a9a-ba84-056e947dca18"/>
+				<textFieldExpression><![CDATA[$F{endDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="27" width="78" height="20" uuid="f73e5df1-3104-493b-96ae-e650d89c8a1d"/>
+				<text><![CDATA[Start Date:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="669" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="437" height="20" uuid="e80f92b9-204d-4d23-9916-f5f6373d7db7"/>
+				<text><![CDATA[Does your RSAT program use evidence-based treatment services?]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="0" width="118" height="20" uuid="63945b07-8c49-4e02-9e20-68f5fdd14e3d"/>
+				<textFieldExpression><![CDATA[$F{eviBasedTrt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="437" height="20" uuid="c59e14f5-376b-4f1d-bd0f-170e2216f649"/>
+				<text><![CDATA[If yes, describe the evidence-based treatment services.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="20" width="118" height="20" uuid="f5f15230-cce5-4103-b865-2673e3a2b33d"/>
+				<textFieldExpression><![CDATA[$F{eviBasedDesc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="41" width="437" height="20" uuid="986cbdfc-402e-4fa0-888f-0fa1dbe5489a"/>
+				<text><![CDATA[How many staff who directly work with the participants in the RSAT program]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="41" width="118" height="20" uuid="ebf3faa8-5d83-479b-be34-7afc8cc5dc0b"/>
+				<textFieldExpression><![CDATA[$F{noOfDirectStaff}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="61" width="437" height="19" uuid="e20a75c3-5f99-4996-8a21-c086f8d9df98"/>
+				<text><![CDATA[No. identified as having high crimeogenic risks and or high substance abuse treatment needs]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="61" width="118" height="19" uuid="ad95a849-0af1-495c-9f66-23cc8698e85d"/>
+				<textFieldExpression><![CDATA[$F{noOfHighTrtNeed}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="80" width="437" height="20" uuid="a54d87fa-fe43-4d2e-993a-696beb856cb8"/>
+				<text><![CDATA[No. of participants who complete and individualized treatment plan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="80" width="118" height="20" uuid="1601afd4-2fa9-42e2-9677-c1dabc2d121e"/>
+				<textFieldExpression><![CDATA[$F{noOfCompIndTrtPlan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="100" width="437" height="20" uuid="05eb668d-6d4a-42a7-a4f3-786274cbd7b3"/>
+				<text><![CDATA[No. of participants enrolled in RSAT Aftercare as last day rpt period]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="100" width="118" height="20" uuid="42be8f1a-737b-4747-ab93-78364e89c9f4"/>
+				<textFieldExpression><![CDATA[$F{noOfRsatAftercareEn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="120" width="437" height="20" uuid="0a514fb5-f3dd-477b-ad6d-120b793b9c49"/>
+				<text><![CDATA[No. of new aftercare participants admitted during reporting period]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="120" width="118" height="20" uuid="bd1e5b95-cd8a-40c9-8bd5-9a57e1ad3eec"/>
+				<textFieldExpression><![CDATA[$F{noOfNewAftercareEn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="140" width="437" height="20" uuid="80a03164-cc6d-4c94-9e28-0f07940844bc"/>
+				<text><![CDATA[No. of new participants with a continuity of care arrangement or reentry or transitional plan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="140" width="118" height="20" uuid="1e515619-4ba0-43a3-9bd0-3bf4b109f354"/>
+				<textFieldExpression><![CDATA[$F{noOfNewTransPlan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="160" width="437" height="20" uuid="d447f42a-0c4b-4a7b-9085-5f2896586819"/>
+				<text><![CDATA[No. of aftercare participants provided services during reporting period]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="160" width="118" height="20" uuid="b7beb820-df5b-4583-9d1f-b9eac628bac4"/>
+				<textFieldExpression><![CDATA[$F{noOfServiced}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="180" width="437" height="20" uuid="c6f071ba-cd59-4e28-a32d-20a2f997ad04"/>
+				<text><![CDATA[No. of participants successfully completed all requirements of aftercare portion of RSAT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="180" width="118" height="20" uuid="19ff1579-9ac6-4d5e-bb12-34d8ffa3a613"/>
+				<textFieldExpression><![CDATA[$F{noOfSuccessComp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="200" width="437" height="20" uuid="b51d2949-db4f-41ff-8f5f-decc67b8e3c6"/>
+				<text><![CDATA[No. of participants did not complete aftercare portion of RSAT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="200" width="118" height="20" uuid="53d75062-1fb8-4de6-8fe3-a2217f8cc799"/>
+				<textFieldExpression><![CDATA[$F{noOfNonComp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="220" width="437" height="20" uuid="a8837101-6cf5-49a2-8076-bb6c598acb02"/>
+				<text><![CDATA[No. of successful aftercare participants who completed the program in 0-3 months]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="220" width="118" height="20" uuid="7d8f54c2-2419-4061-a01a-9ed0bd5cb1cf"/>
+				<textFieldExpression><![CDATA[$F{noOfComp3m}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="240" width="437" height="20" uuid="ed47b13a-6a00-43d9-972f-2c8b685ff9f8"/>
+				<text><![CDATA[No. of successful aftercare participants who completed the program in 4-6 months]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="240" width="118" height="20" uuid="74f24783-ccff-4834-8fde-4d372a8a8231"/>
+				<textFieldExpression><![CDATA[$F{noOfComp6m}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="260" width="437" height="20" uuid="75f44678-75d2-43e7-bbf8-bcb21647394a"/>
+				<text><![CDATA[No. of successful aftercare participants who completed the program in 7-9 months]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="260" width="118" height="20" uuid="f4e66564-849b-4c7c-b223-214c3ae56709"/>
+				<textFieldExpression><![CDATA[$F{noOfComp9m}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="280" width="437" height="20" uuid="f710be17-fc15-4119-8662-c1c7e5b56b47"/>
+				<text><![CDATA[No. of successful aftercare participants who completed the program in 10 or more months]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="280" width="118" height="20" uuid="02b7f952-95b7-4c85-9a98-447b0f6e1fc4"/>
+				<textFieldExpression><![CDATA[$F{noOfComp10m}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="300" width="437" height="20" uuid="8321e723-1a13-47e3-aaa8-17d899545aa7"/>
+				<text><![CDATA[No. of unsuccessful aftercare participants who left the program in 0-3 months]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="300" width="118" height="20" uuid="6ff4e5d9-0acf-466a-8318-039b5cfba928"/>
+				<textFieldExpression><![CDATA[$F{noOfNonComp3m}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="320" width="437" height="20" uuid="08ea7951-78ed-450a-be25-e83cb65a8a15"/>
+				<text><![CDATA[No. of unsuccessful aftercare participants who left the program in 4-6 months]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="320" width="118" height="20" uuid="3f8eed7d-1e30-4a6e-bab2-b80adb6ba31a"/>
+				<textFieldExpression><![CDATA[$F{noOfNonComp6m}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="340" width="437" height="20" uuid="5cd0502f-299a-46b7-960c-d4809ffb2694"/>
+				<text><![CDATA[No. of unsuccessful aftercare participants who left the program in 7-9 months]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="340" width="118" height="20" uuid="df217399-0212-4ad9-9e06-ffbd7adffaee"/>
+				<textFieldExpression><![CDATA[$F{noOfNonComp9m}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="360" width="437" height="20" uuid="4f0af67d-71b5-4240-8786-f60221fe8a38"/>
+				<text><![CDATA[No. of unsuccessful aftercare participants who left the program in 10 or more months]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="360" width="118" height="20" uuid="79af0854-aede-4297-9174-c2d54143a69c"/>
+				<textFieldExpression><![CDATA[$F{noOfNonComp10m}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="380" width="437" height="20" uuid="6865ed15-ca29-437b-a0b0-4f316fec9d99"/>
+				<text><![CDATA[No. who were administered alcohol/drug test before admission into program]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="380" width="118" height="20" uuid="15dab611-8ec6-4e90-904b-675fed243922"/>
+				<textFieldExpression><![CDATA[$F{noOfPartiTestBeforeAdm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="399" width="437" height="20" uuid="1956f900-fb00-413d-951e-fc12eb9a40ca"/>
+				<text><![CDATA[Of those enrolled in aftercare portion of RSAT, No. tested for alcohol of illegal substance]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="400" width="118" height="20" uuid="6866c9bc-1878-4651-8bde-ebb0c8c944d3"/>
+				<textFieldExpression><![CDATA[$F{noOfPartiTestDuringRpt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="419" width="437" height="20" uuid="82cc7689-4882-4498-89ed-e923da0143bc"/>
+				<text><![CDATA[No. of aftercare participants tested after program completion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="420" width="118" height="20" uuid="3140b0a9-4ab2-4549-8608-9a074cba6ad0"/>
+				<textFieldExpression><![CDATA[$F{noOfPartiTestAfterComp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="439" width="437" height="21" uuid="bcd4328c-00a2-470d-be7a-c8ab813ebf5a"/>
+				<text><![CDATA[Of the above number, how many tested positive after program completion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="440" width="118" height="20" uuid="af6e6919-7abe-4c17-a405-45b506302a07"/>
+				<textFieldExpression><![CDATA[$F{noOfPartiTestPosAfterComp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="460" width="437" height="20" uuid="4948d2f6-df3b-4b20-b97d-e6525d0a5a91"/>
+				<text><![CDATA[Provided direct service to nonincarcerated population of program participants ?]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="460" width="118" height="20" uuid="17d1abb4-3382-4c5b-8da9-383e1751bc46"/>
+				<textFieldExpression><![CDATA[$F{provdSerToNonIncar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="480" width="437" height="20" uuid="fe9e9780-b1d6-423f-b580-38b2c74194b8"/>
+				<text><![CDATA[If no, explain?]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="480" width="118" height="20" uuid="bcfb6cf6-3c6b-4cef-a021-49340bc7d7f7"/>
+				<textFieldExpression><![CDATA[$F{provdSerToNonIncarDesc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="500" width="437" height="20" uuid="61cff0dd-d95f-4b3a-a283-b5ea937eb142"/>
+				<text><![CDATA[No. of participants who have any type of health care coverage]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="500" width="118" height="20" uuid="42343e8c-e90b-47f1-b66a-a3739e82eb63"/>
+				<textFieldExpression><![CDATA[$F{noOfPartiHealthCover}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="520" width="437" height="20" uuid="33eeecb2-100e-49f8-99dc-6413456ab70b"/>
+				<text><![CDATA[No. of participants who have Medicaid not including Medicare]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="520" width="118" height="20" uuid="dea881d5-7372-4608-93b0-28efcc3e0b29"/>
+				<textFieldExpression><![CDATA[$F{noOfPartiMedicaid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="540" width="437" height="20" uuid="dcd3ecf0-0fd0-47ad-bdb9-bce221e51bab"/>
+				<text><![CDATA[No. of new participants who have any type of health care coverage during reporting period]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="540" width="118" height="20" uuid="e7cf16fb-d973-4383-91f0-268b19c1d020"/>
+				<textFieldExpression><![CDATA[$F{noOfNewPartiHealthCover}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="560" width="437" height="20" uuid="b65ad927-dbce-475c-97f5-ffdd38230fae"/>
+				<text><![CDATA[No. of new participants who have Medicaid not including Medicare during reporting period]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="560" width="118" height="20" uuid="9f3181c1-7e53-4548-b514-7349ae6c1341"/>
+				<textFieldExpression><![CDATA[$F{noOfNewPartiMedicaid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="580" width="437" height="22" uuid="5e29c92b-857e-4e03-bd92-98a5b760c3fe"/>
+				<text><![CDATA[During reporting period, access to treatment and community-based health service provided?]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="580" width="118" height="20" uuid="e0632c92-513a-4a0f-a7d5-7fa7b1054a9c"/>
+				<textFieldExpression><![CDATA[$F{accessToOtherService}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="602" width="437" height="20" uuid="85800311-073f-4f63-ae74-14ec4d4946ed"/>
+				<text><![CDATA[No, of newly available mental health services facilities]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="602" width="118" height="20" uuid="b2693360-a101-4ad6-b6e0-87d834b03649"/>
+				<textFieldExpression><![CDATA[$F{noOfMentalHealthProv}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="622" width="437" height="20" uuid="650152c7-283e-4d13-8c80-5cd3685d347f"/>
+				<text><![CDATA[No, of newly available substance abuse services facilities]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="622" width="118" height="20" uuid="5ed643b9-3c65-459e-96c8-d4c89a426f81"/>
+				<textFieldExpression><![CDATA[$F{noOfSubAbuseProv}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="642" width="437" height="20" uuid="4fe62583-f983-4e02-b141-378151486268"/>
+				<text><![CDATA[No, of newly available primary care services facilities]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="642" width="118" height="20" uuid="6192533e-3898-40de-bbd9-0bd24af06005"/>
+				<textFieldExpression><![CDATA[$F{noOfPriCareProv}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

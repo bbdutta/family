@@ -66,6 +66,11 @@
           p:url="classpath:bhnprogramcompletion.jrxml"
           p:reportDataKey="rptdatasource" />
           
+    <bean id="pdfBHNRsatReport"
+          class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
+          p:url="classpath:bhnrsat.jrxml"
+          p:reportDataKey="rptdatasource" />
+
 <!--  
     <bean id="xlsReport"
           class="org.springframework.web.servlet.view.jasperreports.JasperReportsXlsView"

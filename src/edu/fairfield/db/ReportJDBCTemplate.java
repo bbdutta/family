@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import edu.fairfield.Client;
 import edu.fairfield.DischargePlanRpt;
 import edu.fairfield.ProgramCompRpt;
+import edu.fairfield.RsatRpt;
 import edu.fairfield.SubstanceFreeRpt;
 import edu.fairfield.TreatmentCompRpt;
 
@@ -206,6 +207,45 @@ public class ReportJDBCTemplate implements ReportDAO {
 		rpt.setUnsuccessDischargeNum(unsuccessDischargeNum);
 		rpt.setOtherDischargeNum(otherDischargeNum);
 		rpt.setSuccessDischargePct();
+		rpt.setStartDate(startDate);
+		rpt.setEndDate(endDate);
+		rptList.add(rpt);
+		
+		return rptList;
+	}
+
+	@Override
+	public List<RsatRpt> generateRsatRpt(long programId, String startDate, String endDate) {
+		RsatRpt rpt = new RsatRpt();
+		String SQL = " SELECT count(*) idp_cnt " +
+					" FROM client_program " +
+					" where discharge_plan = 'Y'" +
+					" and date_admitted >= STR_TO_DATE('" + startDate + "','%Y-%m-%d') " +
+					" and date_discharged <= STR_TO_DATE('" + endDate + "','%Y-%m-%d') " +
+					" and program_id = " + programId; 
+		int idpNum = jdbcTemplateObject.queryForInt(SQL);
+		
+		SQL = " SELECT count(*) comm_link_cnt " +
+				" FROM client_program " +
+				" where community_linkages = 'Y' " +
+				" and date_admitted >= STR_TO_DATE('" + startDate + "','%Y-%m-%d') " +
+				" and date_discharged <= STR_TO_DATE('" + endDate + "','%Y-%m-%d') " +
+				" and program_id = " + programId; 
+
+		int preLinkComNum = jdbcTemplateObject.queryForInt(SQL);
+		
+		SQL = " SELECT count(*) less_30_noplan_cnt " +
+				" FROM client_program " +
+				" where discharge_plan = 'N' " +
+				" and date_admitted > (now() - interval 30 day) " +
+				" and program_id = " + programId; 
+
+		int less30NoPlanNum = jdbcTemplateObject.queryForInt(SQL);
+		
+		List<RsatRpt> rptList = new ArrayList<RsatRpt>();
+		rpt.setIdpNum(idpNum);
+		rpt.setPreLinkComNum(preLinkComNum);
+		rpt.setLess30NoPlanNum(less30NoPlanNum);
 		rpt.setStartDate(startDate);
 		rpt.setEndDate(endDate);
 		rptList.add(rpt);

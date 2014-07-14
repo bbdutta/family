@@ -39,6 +39,7 @@ function validate()
 <div id="index"> 
 	                                                             
 	  <form method="POST" action="genRpt">
+<!-- 	  
 	  <h3>Fresh Start Reports</h3><br>
 	    <input type="radio" name="rep-name" id="rep-name" value="FS_CLIENT_LIST" checked>
 	    <label>Fresh Start Client List</label>
@@ -55,9 +56,13 @@ function validate()
 	    <input type="radio" name="rep-name" id="rep-name" value="FS_PROG_COMP">
 	    <label>Fresh Start Program Completion</label>
 	    <br>
+-->	    
 	    <h3>Behavioral Health Network Reports</h3><br>
 	    <input type="radio" name="rep-name" id="rep-name" value="BHN_CLIENT_LIST">
 	    <label>Behavioral Health Client List</label>
+	    <br>
+	    <input type="radio" name="rep-name" id="rep-name" value="BHN_RSAT">
+	    <label>Behavioral Health RSAT Report</label>
 	    <br>
 	    <input type="radio" name="rep-name" id="rep-name" value="BHN_SUB_FREE">
 	    <label>Behavioral Health substance free lifestyle</label>
@@ -85,7 +90,15 @@ function validate()
 		  <option value="FIRST">First Name</option>
 		  <option value="LAST">Last Name</option>
 		</select></p>
-
+		<div id="rsat">
+    		<label>Does your RSAT program use evidence based treatment services?</label><br/> 
+			<input type="radio" name="evidence" value="Y">Yes<br/>
+			<input type="radio" name="evidence" value="N">No<br/>
+			<label>Describe evidence based treatment services : </label><br/>
+			<textarea name="evidenceTreatment" rows="2" cols="80"></textarea><br/>
+			<label>How many staff who directly work with the participants in RSAT program : </label><br/>
+			<input type="input" name="noOfDirectStaff" ><br/>
+		</div>
 		<p>
 		<label> Report Format</label>
 		<select name="rep-fmt" size="1">

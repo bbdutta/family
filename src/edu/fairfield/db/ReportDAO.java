@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 import edu.fairfield.Client;
 import edu.fairfield.DischargePlanRpt;
 import edu.fairfield.ProgramCompRpt;
+import edu.fairfield.RsatRpt;
 import edu.fairfield.SubstanceFreeRpt;
 import edu.fairfield.TreatmentCompRpt;
 
@@ -36,5 +37,6 @@ public interface ReportDAO {
 	public List<DischargePlanRpt> generateDischargePlanRpt(long programId, String startDate, String endDate);
 	public List<TreatmentCompRpt> generateTreatmentCompRpt(long programId, String startDate, String endDate);
 	public List<ProgramCompRpt> generateProgramCompRpt(long programId, String startDate, String endDate);
+	public List<RsatRpt> generateRsatRpt(long programId, String startDate, String endDate);
 }
 

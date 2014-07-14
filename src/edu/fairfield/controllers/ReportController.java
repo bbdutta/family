@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import org.apache.log4j.Logger;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.fairfield.Client;
 import edu.fairfield.DischargePlanRpt;
 import edu.fairfield.ProgramCompRpt;
+import edu.fairfield.RsatRpt;
 import edu.fairfield.SubstanceFreeRpt;
 import edu.fairfield.TreatmentCompRpt;
 import edu.fairfield.db.ReportJDBCTemplate;
@@ -62,6 +64,7 @@ public class ReportController {
         List<DischargePlanRpt> dischargePlanRpt = null;
         List<TreatmentCompRpt> treatmentCompRpt = null;
         List<ProgramCompRpt> programCompRpt = null;
+        List<RsatRpt> rsatRpt = null;
         JRDataSource JRdataSource = null;
 		
         if ("FS_CLIENT_LIST".equals(repName)) {
@@ -132,6 +135,13 @@ public class ReportController {
         if ("BHN_PROG_COMP".equals(repName)) {
         	programCompRpt = reportJDBCTemplate.generateProgramCompRpt(2L, startDate, endDate);
         	JRdataSource = new JRBeanCollectionDataSource(programCompRpt);
+            parameterMap.put("rptdatasource", JRdataSource);
+            if ("PDF".equals(repFmt))
+            	modelAndView = new ModelAndView("pdfBHNProgCompReport", parameterMap);
+        }
+        if ("BHN_RSAT".equals(repName)) {
+        	rsatRpt = reportJDBCTemplate.generateRsatRpt(2L, startDate, endDate);
+        	JRdataSource = new JRBeanCollectionDataSource(rsatRpt);
             parameterMap.put("rptdatasource", JRdataSource);
             if ("PDF".equals(repFmt))
             	modelAndView = new ModelAndView("pdfBHNProgCompReport", parameterMap);
