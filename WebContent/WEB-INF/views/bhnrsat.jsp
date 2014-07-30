@@ -133,6 +133,16 @@ function enableOtherReason(){
 
 <h3>RSAT</h3>
     <p>
+    	<label>Admission Date:</label><form:input id="progAddDate" type="date" path="progAddDate" />
+    </p>
+    <p>
+    	<label>Orientation Date:</label><form:input id="orientationDate" type="date" path="orientationDate" />
+    </p>
+    <p>
+		<label>Orientation Facility:</label>
+		<form:input path="orientationFacility" id="orientationFacility"/>
+	</p>
+    <p>
     	<label>Did client receive an risk assessment?</label> 
         <form:radiobutton id="receivedRiskAsmtY" path="receivedRiskAsmt" value="Y" onchange="enableAssmtDate()"/>Yes 
 	 	<form:radiobutton id="receivedRiskAsmtN" path="receivedRiskAsmt" value="N" onchange="enableAssmtDate()"/>No
@@ -212,6 +222,10 @@ function enableOtherReason(){
 	 	<form:radiobutton path="testedPositiveSubstance" value="N"/>No
 	</p>
     <p>
+		<label>No. of urine tests:</label>
+		<form:input path="noOfUrineTest" id="noOfUrineTest"/>
+	</p>
+    <p>
       <label>Enrolled in health care coverage: </label>
 	      <form:select path="healthCare" id="healthCare">
 	 	 		<form:options items="${healthCareList}"/>
@@ -222,6 +236,13 @@ function enableOtherReason(){
         <form:radiobutton path="enrolledInMedicaid" value="Y"/>Yes 
 	 	<form:radiobutton path="enrolledInMedicaid" value="N"/>No
 	</p>
+    <p>
+		<label>Name of agencies that assisted client:</label>
+		<form:input path="agenciesAssistedClient" id="agenciesAssistedClient"/>
+	</p>
+    <p>
+    	<label>Program Completion Date:</label><form:input id="progCompDate" type="date" path="progCompDate" />
+    </p>
 	
     <br>  
     

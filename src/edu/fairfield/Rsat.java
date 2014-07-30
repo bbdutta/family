@@ -6,6 +6,9 @@ import java.util.List;
 public class Rsat {
 
 	private Client client;
+	private String progAddDate;
+	private String orientationDate;
+	private String orientationFacility;
 	private String receivedRiskAsmt;
 	private String assmtDate;
 	private String toolNameUsed;
@@ -23,8 +26,11 @@ public class Rsat {
 	private String otherReason;
 	private String dateOfDrugTest;
 	private String testedPositiveSubstance;
+	private int noOfUrineTest;
+	private String agenciesAssistedClient;
 	private String healthCare;
 	private String enrolledInMedicaid;
+	private String progCompDate;
 	
 	public static List<String> serviceList = new ArrayList();
 	public static List<String> nonCompletionList = new ArrayList();
@@ -215,6 +221,54 @@ public class Rsat {
 
 	public void setEnrolledInMedicaid(String enrolledInMedicaid) {
 		this.enrolledInMedicaid = enrolledInMedicaid;
+	}
+
+	public String getProgAddDate() {
+		return progAddDate;
+	}
+
+	public void setProgAddDate(String progAddDate) {
+		this.progAddDate = progAddDate;
+	}
+
+	public String getOrientationDate() {
+		return orientationDate;
+	}
+
+	public void setOrientationDate(String orientationDate) {
+		this.orientationDate = orientationDate;
+	}
+
+	public String getOrientationFacility() {
+		return orientationFacility;
+	}
+
+	public void setOrientationFacility(String orientationFacility) {
+		this.orientationFacility = orientationFacility;
+	}
+
+	public int getNoOfUrineTest() {
+		return noOfUrineTest;
+	}
+
+	public void setNoOfUrineTest(int noOfUrineTest) {
+		this.noOfUrineTest = noOfUrineTest;
+	}
+
+	public String getAgenciesAssistedClient() {
+		return agenciesAssistedClient;
+	}
+
+	public void setAgenciesAssistedClient(String agenciesAssistedClient) {
+		this.agenciesAssistedClient = agenciesAssistedClient;
+	}
+
+	public String getProgCompDate() {
+		return progCompDate;
+	}
+
+	public void setProgCompDate(String progCompDate) {
+		this.progCompDate = progCompDate;
 	}
 
 	

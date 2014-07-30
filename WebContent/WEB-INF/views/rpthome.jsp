@@ -90,7 +90,7 @@ function validate()
 		  <option value="FIRST">First Name</option>
 		  <option value="LAST">Last Name</option>
 		</select></p>
-		<div id="rsat">
+<!-- 		<div id="rsat">
     		<label>Does your RSAT program use evidence based treatment services?</label><br/> 
 			<input type="radio" name="evidence" value="Y">Yes<br/>
 			<input type="radio" name="evidence" value="N">No<br/>
@@ -99,7 +99,7 @@ function validate()
 			<label>How many staff who directly work with the participants in RSAT program : </label><br/>
 			<input type="input" name="noOfDirectStaff" ><br/>
 		</div>
-		<p>
+ -->		<p>
 		<label> Report Format</label>
 		<select name="rep-fmt" size="1">
 		  <option value="PDF">Pdf</option>

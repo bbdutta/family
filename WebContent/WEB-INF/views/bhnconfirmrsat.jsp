@@ -20,7 +20,10 @@
 <form:input type="hidden" path="client.clientId"/>
 <form:input type="hidden" path="client.inmateNum"/>
 <form:input type="hidden" path="client.lastName"/>
-<form:input type="hidden" path="client.programId" value="2"/> 
+<form:input type="hidden" path="client.programId" value="2"/>
+<form:input type="hidden" path="progAddDate"/>
+<form:input type="hidden" path="orientationDate"/>
+<form:input type="hidden" path="orientationFacility"/> 
 <form:input type="hidden" path="receivedRiskAsmt"/>
 <form:input type="hidden" path="assmtDate"/>
 <form:input type="hidden" path="toolNameUsed"/>
@@ -38,8 +41,11 @@
 <form:input type="hidden" path="otherReason"/>
 <form:input type="hidden" path="dateOfDrugTest"/>
 <form:input type="hidden" path="testedPositiveSubstance"/>
+<form:input type="hidden" path="noOfUrineTest"/>
 <form:input type="hidden" path="healthCare"/>
 <form:input type="hidden" path="enrolledInMedicaid"/>
+<form:input type="hidden" path="agenciesAssistedClient"/>
+<form:input type="hidden" path="progCompDate"/>
 
 <font color="green"><b>${RSAT_SAVE_STATUS}</b></font>
 
@@ -55,8 +61,10 @@
 <div id="cmForm">
 <h3>Rsat</h3>
 
-
-	       <p> Did client receive an risk assessment? ${command.receivedRiskAsmt}</p> 
+		   <p>Admission Date: ${command.progAddDate}</p>
+		   <p>Orientation Date: ${command.orientationDate}</p>
+		   <p>Orientation Facility: ${command.orientationFacility}</p>
+	       <p>Did client receive an risk assessment? ${command.receivedRiskAsmt}</p> 
            <p>Risk Assessment Date: ${command.assmtDate}</p>
            <p>Name of the tool used: ${command.toolNameUsed}</p>
            <p>High Crimeogenic risk and/or high substance abuse treatment needs? ${command.highCrimeogenicRisk}</p>
@@ -73,8 +81,11 @@
            <p>Please explain other reason: ${command.otherReason}</p>
            <p>Date on which alcohol/drug test administered: ${command.dateOfDrugTest}</p>
            <p>Tested positive for alcohol or illegal substances? ${command.testedPositiveSubstance}</p>
+           <p>No. of urine tests: ${command.noOfUrineTest}</p>
            <p>Enrolled in health care coverage: ${command.healthCare}</p>
            <p>Is enrolled in medicaid / not medicare? ${command.enrolledInMedicaid}</p>
+           <p>Name of agencies that assisted client: ${command.agenciesAssistedClient}</p>
+           <p>Program Completion Date: ${command.progCompDate}</p>
 	 
 	
          <br>  

@@ -60,10 +60,11 @@ public interface ClientDAO {
 
 	public Rsat getRsat(long inmateNum, long programId);
 	
-	public void addRsat(Long clientId, Long programId, String recRiskAsmt, Calendar asmtDate, String toolName, String highCrimeogenicRisk,
+	public void addRsat(Long clientId, Long programId, Calendar progAddDate, Calendar orientationDate, String orientationFacility, String recRiskAsmt, Calendar asmtDate, String toolName, String highCrimeogenicRisk,
 			String compIndTrtPlan, String enrollRsatAftercare, Calendar aftercareEnrollDate, String contCareAgmt, Calendar serviceDate, String serviceType,    
 			String otherService, String compAllAftercareReq, Calendar compDate, String reasonNonComp, String otherReason, 
-			Calendar drugTestDate, String testedPositive, String healthCareProvider, String enrolledMedicaid); 
+			Calendar drugTestDate, String testedPositive, int noOfUrineTest, String agenciesAssistedClient, 
+			String healthCareProvider, String enrolledMedicaid, Calendar progCompDate); 
 
 
 }

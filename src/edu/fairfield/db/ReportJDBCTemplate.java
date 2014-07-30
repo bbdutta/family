@@ -243,9 +243,9 @@ public class ReportJDBCTemplate implements ReportDAO {
 		int less30NoPlanNum = jdbcTemplateObject.queryForInt(SQL);
 		
 		List<RsatRpt> rptList = new ArrayList<RsatRpt>();
-		rpt.setIdpNum(idpNum);
-		rpt.setPreLinkComNum(preLinkComNum);
-		rpt.setLess30NoPlanNum(less30NoPlanNum);
+//		rpt.setIdpNum(idpNum);
+//		rpt.setPreLinkComNum(preLinkComNum);
+//		rpt.setLess30NoPlanNum(less30NoPlanNum);
 		rpt.setStartDate(startDate);
 		rpt.setEndDate(endDate);
 		rptList.add(rpt);

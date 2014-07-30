@@ -1,13 +1,6 @@
 /bhnclients.jrxml
+/bhndischargeplan.jasper
 /bhndischargeplan.jrxml
 /bhnprogramcompletion.jrxml
-/bhnsubstancefree.jrxml
-/bhntreatmentcompliance.jrxml
-/clients.jrxml
+/bhnrsat.jasper
 /edu
-/fsdischargeplan.jrxml
-/fsprogramcompletion.jrxml
-/fssubstancefree.jrxml
-/fstreatmentcompliance.jrxml
-/log4j.properties
-/bhnrsat.jrxml

@@ -104,18 +104,20 @@ public class ClientJDBCTemplate implements ClientDAO {
 	}
 
 	@Override
-	public void addRsat(Long clientId, Long programId, String recRiskAsmt, Calendar asmtDate, String toolName, String highCrimeogenicRisk,
+	public void addRsat(Long clientId, Long programId, Calendar progAddDate, Calendar orientationDate, String orientationFacility, String recRiskAsmt, Calendar asmtDate, String toolName, String highCrimeogenicRisk,
 			String compIndTrtPlan, String enrollRsatAftercare, Calendar aftercareEnrollDate, String contCareAgmt, Calendar serviceDate, String serviceType,    
 			String otherService, String compAllAftercareReq, Calendar compDate, String reasonNonComp, String otherReason, 
-			Calendar drugTestDate, String testedPositive, String healthCareProvider, String enrolledMedicaid) {
-		String SQL = "UPDATE bhn_rsat set received_risk_asmt = ?,assmt_date = ?,toolname_used = ?,high_crimeogenic_risk =?,"
+			Calendar drugTestDate, String testedPositive, int noOfUrineTest, String agenciesAssistedClient, 
+			String healthCareProvider, String enrolledMedicaid, Calendar progCompDate) {
+		String SQL = "UPDATE bhn_rsat set admission_date = ?, orientation_date = ?, orientation_facility = ?,received_risk_asmt = ?,assmt_date = ?,toolname_used = ?,high_crimeogenic_risk =?,"
 				+ "completed_ind_trt_plan = ?,enrolled_rsat_aftercare = ?,aftercare_enroll_date = ?,cont_care_agmt = ?,service_date = ?,"
 				+ "service_type = ?, other_service = ?,comp_all_aftercare_req = ?,completion_date = ?,reason_non_completion = ?,"
-				+ "other_reason = ?, drug_test_date = ?, tested_positive_sub = ?, health_care_provider = ?, enrolled_medicaid = ?"
+				+ "other_reason = ?, drug_test_date = ?, tested_positive_sub = ?, no_of_urine_test = ?, agencies_assisted_client = ?, "
+				+ "health_care_provider = ?, enrolled_medicaid = ?, program_completion_date = ?"
 				+ " where client_id = ? and program_id = ?"; 
-		jdbcTemplateObject.update(SQL, recRiskAsmt, asmtDate, toolName, highCrimeogenicRisk, compIndTrtPlan, enrollRsatAftercare, 
+		jdbcTemplateObject.update(SQL, progAddDate, orientationDate, orientationFacility, recRiskAsmt, asmtDate, toolName, highCrimeogenicRisk, compIndTrtPlan, enrollRsatAftercare, 
 				aftercareEnrollDate, contCareAgmt, serviceDate, serviceType, otherService, compAllAftercareReq, compDate, reasonNonComp, otherReason, 
-				drugTestDate, testedPositive, healthCareProvider, enrolledMedicaid, clientId, programId); 
+				drugTestDate, testedPositive, noOfUrineTest, agenciesAssistedClient, healthCareProvider, enrolledMedicaid, progCompDate, clientId, programId); 
 	}
 
 }

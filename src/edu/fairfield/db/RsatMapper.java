@@ -14,6 +14,15 @@ public class RsatMapper implements RowMapper<Rsat>{
 	public Rsat mapRow(ResultSet rs, int rowNum) throws SQLException {
 
  		Rsat rsat = new Rsat();
+ 		Date progAddDate = rs.getDate("admission_date");
+		if (progAddDate != null) {
+			rsat.setProgAddDate(progAddDate.toString());
+		}
+ 		Date orientationDate = rs.getDate("orientation_date");
+		if (orientationDate != null) {
+			rsat.setOrientationDate(orientationDate.toString());
+		}
+		rsat.setOrientationFacility(rs.getString("orientation_facility"));
 		rsat.setReceivedRiskAsmt(rs.getString("received_risk_asmt"));
 		Date assmtDate = rs.getDate("assmt_date");
 		if (assmtDate != null) {
@@ -46,8 +55,14 @@ public class RsatMapper implements RowMapper<Rsat>{
 			rsat.setDateOfDrugTest(dateOfDrugTest.toString());
 		}
 		rsat.setTestedPositiveSubstance(rs.getString("tested_positive_sub"));
+		rsat.setNoOfUrineTest(rs.getInt("no_of_urine_test"));
+		rsat.setAgenciesAssistedClient(rs.getString("agencies_assisted_client"));
 		rsat.setHealthCare(rs.getString("health_care_provider"));
 		rsat.setEnrolledInMedicaid(rs.getString("enrolled_medicaid"));
+		Date progCompDate = rs.getDate("program_completion_date");
+		if (progCompDate != null) {
+			rsat.setProgCompDate(progCompDate.toString());
+		}
 		
 		return rsat;
 	}

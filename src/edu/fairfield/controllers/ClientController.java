@@ -525,8 +525,26 @@ public class ClientController {
 	public ModelAndView addBhnRsat(@ModelAttribute("SpringWeb")Rsat rsat, ModelMap model) {
 		
 		SimpleDateFormat dateSdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		Calendar progAddDate = Calendar.getInstance();
+		try {
+			logger.info("ClientController::addBhnRsat: progAddDate -> "+rsat.getProgAddDate());
+			progAddDate.setTime(dateSdf.parse(rsat.getProgAddDate()));
+		} catch (ParseException e) {
+			progAddDate = null;
+			logger.info("ClientController::addBhnRsat: Setting progAddDate to Null");
+			e.printStackTrace();
+		}
+		Calendar orientationDate = Calendar.getInstance();
+		try {
+			logger.info("ClientController::addBhnRsat: orientationDate -> "+rsat.getOrientationDate());
+			orientationDate.setTime(dateSdf.parse(rsat.getOrientationDate()));
+		} catch (ParseException e) {
+			orientationDate = null;
+			logger.info("ClientController::addBhnRsat: Setting orientationDate to Null");
+			e.printStackTrace();
+		}
 		Calendar asmtDate = Calendar.getInstance();
-		
 		try {
 			logger.info("ClientController::addBhnRsat: asmtDate -> "+rsat.getAssmtDate());
 			asmtDate.setTime(dateSdf.parse(rsat.getAssmtDate()));
@@ -572,14 +590,24 @@ public class ClientController {
 			logger.info("ClientController::addBhnRsat: Setting drugTestDate to Null");
 			e.printStackTrace();
 		}
+		Calendar progCompDate = Calendar.getInstance();
+		try {
+			logger.info("ClientController::addBhnRsat: progCompDate -> "+rsat.getProgCompDate());
+			progCompDate.setTime(dateSdf.parse(rsat.getProgCompDate()));
+		} catch (ParseException e) {
+			progCompDate = null;
+			logger.info("ClientController::addBhnRsat: Setting progCompDate to Null");
+			e.printStackTrace();
+		}
 
 		clientJDBCTemplate = (ClientJDBCTemplate)appContext.getBean("clientJDBCTemplate"); 
-		clientJDBCTemplate.addRsat(rsat.getClient().getClientId(), rsat.getClient().getProgramId(), rsat.getReceivedRiskAsmt(),
+		clientJDBCTemplate.addRsat(rsat.getClient().getClientId(), rsat.getClient().getProgramId(), progAddDate, 
+				orientationDate, rsat.getOrientationFacility(), rsat.getReceivedRiskAsmt(),
 				asmtDate, rsat.getToolNameUsed(), rsat.getHighCrimeogenicRisk(), rsat.getCompletedIndTrtPlan(), 
 				rsat.getEnrolledRsatAftercare(), aftercareEnrollDate, rsat.getContCareAgmt(), serviceDate, rsat.getTypeOfService(), 
 				rsat.getOtherService(), rsat.getCompAllAftercareReq(), compDate, rsat.getReasonNonCompletion(), 
-				rsat.getOtherReason(), drugTestDate, rsat.getTestedPositiveSubstance(), rsat.getHealthCare(), 
-				rsat.getEnrolledInMedicaid());
+				rsat.getOtherReason(), drugTestDate, rsat.getTestedPositiveSubstance(), rsat.getNoOfUrineTest(), rsat.getAgenciesAssistedClient(),
+				rsat.getHealthCare(), rsat.getEnrolledInMedicaid(), progCompDate);
 		model.addAttribute("serviceList", Rsat.serviceList);
 		model.addAttribute("nonCompletionList", Rsat.nonCompletionList);
 		model.addAttribute("healthCareList", Rsat.healthCareList);
