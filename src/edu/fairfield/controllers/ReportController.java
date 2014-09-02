@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import net.sf.jasperreports.engine.JRDataSource;
-import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import org.apache.log4j.Logger;
@@ -50,6 +49,12 @@ public class ReportController {
 	public ModelAndView genRpt(	@RequestParam(value="rep-name") String repName,
 								@RequestParam(value="start-date") String startDate,
 								@RequestParam(value="end-date") String endDate,
+								@RequestParam(value="evidence") String evidence,
+								@RequestParam(value="evidenceTreatment") String evidenceTreatment,
+								@RequestParam(value="noOfDirectStaff") String noOfDirectStaff,
+								@RequestParam(value="noOfMentalHealthFacility") long noOfMentalHealthFacility,
+								@RequestParam(value="noOfSunstanceAbuseFacility") long noOfSunstanceAbuseFacility,
+								@RequestParam(value="noOfPrimaryCareFacility") long noOfPrimaryCareFacility,
 								@RequestParam(value="order-by") String orderBy,
 								@RequestParam(value="rep-fmt") String repFmt,
 								ModelAndView modelAndView) { 
@@ -140,14 +145,14 @@ public class ReportController {
             	modelAndView = new ModelAndView("pdfBHNProgCompReport", parameterMap);
         }
         if ("BHN_RSAT".equals(repName)) {
-        	rsatRpt = reportJDBCTemplate.generateRsatRpt(2L, startDate, endDate);
+        	rsatRpt = reportJDBCTemplate.generateRsatRpt(2L, startDate, endDate, evidence, evidenceTreatment, noOfDirectStaff,
+        			noOfMentalHealthFacility, noOfSunstanceAbuseFacility, noOfPrimaryCareFacility);
         	JRdataSource = new JRBeanCollectionDataSource(rsatRpt);
             parameterMap.put("rptdatasource", JRdataSource);
             if ("PDF".equals(repFmt))
-            	modelAndView = new ModelAndView("pdfBHNProgCompReport", parameterMap);
+            	modelAndView = new ModelAndView("pdfBHNRsatReport", parameterMap);
         }
 
- 
         return modelAndView;
 	}
 	

@@ -37,6 +37,8 @@ public interface ReportDAO {
 	public List<DischargePlanRpt> generateDischargePlanRpt(long programId, String startDate, String endDate);
 	public List<TreatmentCompRpt> generateTreatmentCompRpt(long programId, String startDate, String endDate);
 	public List<ProgramCompRpt> generateProgramCompRpt(long programId, String startDate, String endDate);
-	public List<RsatRpt> generateRsatRpt(long programId, String startDate, String endDate);
+	public List<RsatRpt> generateRsatRpt(long programId, String startDate, String endDate, 
+			String evidence, String evidenceTreatment, String noOfDirectStaff, long noOfMentalHealthFacility, 
+			long noOfSunstanceAbuseFacility, long noOfPrimaryCareFacility);
 }
 
