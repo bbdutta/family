@@ -10,7 +10,7 @@
 
 <%@include file="template/rptmenu.jsp" %>
 
-<script src="/Family/resources/js/jquery-2.1.1.min.js"></script>
+<script src="/family/resources/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
 function validate() 
 {
