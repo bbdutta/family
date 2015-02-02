@@ -88,6 +88,9 @@ public class Client {
 		dischargeList.add("Program completion");
 		dischargeList.add("Remand");
 		dischargeList.add("Dismissal");
+		dischargeList.add("EOS/Completed Parole");
+		dischargeList.add("Deceased");
+		dischargeList.add("Absconded");
 		
 		dismissList.add("");
 		dismissList.add("Loss of contact");

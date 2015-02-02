@@ -10,7 +10,7 @@
 
 <%@include file="template/rptmenu.jsp" %>
 
-<script src="/family/resources/js/jquery-2.1.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
 function validate() 
 {
@@ -116,15 +116,15 @@ $( document ).ready(function() {
 			<input type="radio" name="evidence" value="Y">Yes<br/>
 			<input type="radio" name="evidence" value="N">No<br/>
 			<label>Describe evidence based treatment services : </label><br/>
-			<textarea name="evidenceTreatment" rows="2" cols="80"></textarea><br/>
+			<textarea name="evidenceTreatment" rows="2" cols="80">&nbsp;</textarea><br/>
 			<label>How many staff who directly work with the participants in RSAT program : </label><br/>
-			<input type="text" name="noOfDirectStaff" ><br/>
+			<input type="text" name="noOfDirectStaff"  value="0"><br/>
 			<label>No. of newly available mental health service facilities : </label><br/>
-			<input type="text" name="noOfMentalHealthFacility" ><br/>
+			<input type="text" name="noOfMentalHealthFacility"  value="0"><br/>
 			<label>No. of newly available substance abuse service facilities : </label><br/>
-			<input type="text" name="noOfSunstanceAbuseFacility" ><br/>
+			<input type="text" name="noOfSunstanceAbuseFacility"  value="0"><br/>
 			<label>No. of newly available primary care service facilities : </label><br/>
-			<input type="text" name="noOfPrimaryCareFacility" >
+			<input type="text" name="noOfPrimaryCareFacility" value="0">
 			<br/>
 		</div>
 		<br/>

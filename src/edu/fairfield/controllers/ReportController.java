@@ -49,14 +49,14 @@ public class ReportController {
 	public ModelAndView genRpt(	@RequestParam(value="rep-name") String repName,
 								@RequestParam(value="start-date") String startDate,
 								@RequestParam(value="end-date") String endDate,
-								@RequestParam(value="evidence") String evidence,
-								@RequestParam(value="evidenceTreatment") String evidenceTreatment,
-								@RequestParam(value="noOfDirectStaff") String noOfDirectStaff,
-								@RequestParam(value="noOfMentalHealthFacility") long noOfMentalHealthFacility,
-								@RequestParam(value="noOfSunstanceAbuseFacility") long noOfSunstanceAbuseFacility,
-								@RequestParam(value="noOfPrimaryCareFacility") long noOfPrimaryCareFacility,
-								@RequestParam(value="order-by") String orderBy,
-								@RequestParam(value="rep-fmt") String repFmt,
+								@RequestParam(value="evidence", required = false) String evidence,
+								@RequestParam(value="evidenceTreatment", required = false) String evidenceTreatment,
+								@RequestParam(value="noOfDirectStaff", required = false) String noOfDirectStaff,
+								@RequestParam(value="noOfMentalHealthFacility", required = false) long noOfMentalHealthFacility,
+								@RequestParam(value="noOfSunstanceAbuseFacility", required = false) long noOfSunstanceAbuseFacility,
+								@RequestParam(value="noOfPrimaryCareFacility", required = false) long noOfPrimaryCareFacility,
+								@RequestParam(value="order-by", required = false) String orderBy,
+								@RequestParam(value="rep-fmt", required = false) String repFmt,
 								ModelAndView modelAndView) { 
 		
 		logger.info("ReportController::genRpt: Report -> "+ repName +" : startDate -> "+ repName +" : startDate -> "+ startDate +" : endDate -> "+ endDate);

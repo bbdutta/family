@@ -120,21 +120,21 @@
         	<c:if test="${command.dischargeReason == 'Program completion'}">Program completion</c:if>
    			<c:if test="${command.dischargeReason == 'Remand'}">Remand</c:if>
    			<c:if test="${command.dischargeReason == 'Dismissal'}">Dismissal</c:if>
-   			
+   			<c:if test="${command.dischargeReason == 'EOS/Completed Parole'}">EOS/Completed Parole</c:if>
+   			<c:if test="${command.dischargeReason == 'Deceased'}">Deceased</c:if>
+   			<c:if test="${command.dischargeReason == 'Absconded'}">Absconded</c:if>
            </p>
-          
-          
-          
          
-         <c:if test="${command.dischargeReason == 'Dismissal'}">
-        <p><label>If Dismissed : </label>
+        <c:if test="${command.dischargeReason == 'Dismissal'}">
+        	<p><label>If Dismissed : </label>
         	<c:if test="${command.dismissReason == 'loss of contact'}">loss of contact</c:if>
    			<c:if test="${command.dismissReason == 'program rule violation'}">program rule violation</c:if>
    			<c:if test="${command.dismissReason == 'EOS'}">EOS</c:if></p>
    			<c:if test="${command.dismissReason == 'Illness/Hospitalization'}">Illness/Hospitalization</c:if>
    			<c:if test="${command.dismissReason == 'Death'}">Death</c:if>
    			<c:if test="${command.dismissReason == 'Transfer'}">Transfer</c:if>
-   			</c:if>
+   			</p>
+   		</c:if>
    		
          <p><label>Individualized Discharge Plan developed? </label>
         	<c:if test="${command.dischargeplan == 'Y'}">Yes</c:if>
