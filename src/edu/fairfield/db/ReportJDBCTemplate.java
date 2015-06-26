@@ -38,7 +38,9 @@ public class ReportJDBCTemplate implements ReportDAO {
 				" FROM client c, client_program p " +
 				" where c.client_id = p.client_id " +
 				" and p.date_admitted >= STR_TO_DATE('" + startDate + "','%Y-%m-%d') " +
-				" and (p.date_discharged <= STR_TO_DATE('" + endDate + "','%Y-%m-%d') or p.date_discharged is null) " +
+				" and (p.date_discharged <= STR_TO_DATE('" + endDate + "','%Y-%m-%d') " +
+				" or p.date_discharged is null) " +
+				" and p.referral_source != 'RSAT' " +
 				" and p.program_id = " + programId; 
 		if ("FIRST".equals(orderBy))
 			SQL = SQL + " order by c.first_name";
