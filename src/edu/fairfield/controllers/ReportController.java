@@ -144,6 +144,15 @@ public class ReportController {
             if ("PDF".equals(repFmt))
             	modelAndView = new ModelAndView("pdfBHNProgCompReport", parameterMap);
         }
+        if ("RSAT_CLIENT_LIST".equals(repName)) {
+        	clientList = reportJDBCTemplate.listRsatClients(2L, startDate, endDate, orderBy);
+        	JRdataSource = new JRBeanCollectionDataSource(clientList);
+            parameterMap.put("rptdatasource", JRdataSource);
+            if ("PDF".equals(repFmt))
+            	modelAndView = new ModelAndView("pdfRSATClientReport", parameterMap);
+            if ("XLS".equals(repFmt))
+            	modelAndView = new ModelAndView("xlsRSATClientReport", parameterMap);
+        }
         if ("BHN_RSAT".equals(repName)) {
         	rsatRpt = reportJDBCTemplate.generateRsatRpt(2L, startDate, endDate, evidence, evidenceTreatment, noOfDirectStaff,
         			noOfMentalHealthFacility, noOfSunstanceAbuseFacility, noOfPrimaryCareFacility);

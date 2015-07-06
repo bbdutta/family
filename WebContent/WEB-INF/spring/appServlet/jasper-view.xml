@@ -66,6 +66,16 @@
           p:url="classpath:bhnprogramcompletion.jrxml"
           p:reportDataKey="rptdatasource" />
           
+    <bean id="pdfRSATClientReport"
+          class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
+          p:url="classpath:rsatclients.jrxml"
+          p:reportDataKey="rptdatasource" />
+
+    <bean id="xlsRSATClientReport"
+          class="org.springframework.web.servlet.view.jasperreports.JasperReportsXlsView"
+          p:url="classpath:rsatclients.jrxml"
+          p:reportDataKey="rptdatasource" />
+
     <bean id="pdfBHNRsatReport"
           class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
           p:url="classpath:bhnrsat.jrxml"

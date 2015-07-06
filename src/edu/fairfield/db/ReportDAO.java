@@ -32,6 +32,7 @@ public interface ReportDAO {
 	 * all the records from the Client table. 
 	 */
 	public List<Client> listClients(long programId, String startDate, String endDate, String orderBy); 
+	public List<Client> listRsatClients(long programId, String startDate, String endDate, String orderBy); 
 	
 	public List<SubstanceFreeRpt> generateSubFreeRpt(long programId, String startDate, String endDate);
 	public List<DischargePlanRpt> generateDischargePlanRpt(long programId, String startDate, String endDate);

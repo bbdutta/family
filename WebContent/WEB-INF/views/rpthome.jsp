@@ -77,8 +77,11 @@ $( document ).ready(function() {
 	    <input type="radio" name="rep-name" id="BHN_CLIENT" value="BHN_CLIENT_LIST">
 	    <label>Behavioral Health Client List</label>
 	    <br>
+	    <input type="radio" name="rep-name" id="RSAT_CLIENT" value="RSAT_CLIENT_LIST">
+	    <label>RSAT Client List</label>
+	    <br>
 	    <input type="radio" name="rep-name" id="BHN_RSAT" value="BHN_RSAT">
-	    <label>Behavioral Health RSAT Report</label>
+	    <label>RSAT Report</label>
 	    <br>
 	    <input type="radio" name="rep-name" id="BHN_SUB" value="BHN_SUB_FREE">
 	    <label>Behavioral Health substance free lifestyle</label>
