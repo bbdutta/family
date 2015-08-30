@@ -1,0 +1,25 @@
+CREATE TABLE bhn_rsat (
+	client_id INT(11), 
+	program_id INT(11),
+	received_risk_asmt CHAR(1),
+	assmt_date DATE,
+	toolname_used varchar(60),
+	high_crimeogenic_risk char(1),
+	completed_ind_trt_plan char(1),
+	enrolled_rsat_aftercare char(1),
+	aftercare_enroll_date DATE,
+	cont_care_agmt char(1),
+	service_date DATE,
+	service_type varchar(60),
+	other_service varchar(60),
+	comp_all_aftercare_req char(1),
+	completion_date DATE,
+	reason_non_completion varchar(60),
+	other_reason varchar(60),
+	drug_test_date DATE,
+	tested_positive_sub char(1),
+	health_care_provider varchar(60),
+	enrolled_medicaid char(1),
+
+	PRIMARY KEY(client_id, program_id)
+);

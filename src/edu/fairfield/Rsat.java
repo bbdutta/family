@@ -31,11 +31,13 @@ public class Rsat {
 	private String healthCare;
 	private String enrolledInMedicaid;
 	private String progCompDate;
-	
+	private String haveInsurance;
+	private String insuranceType;
+		
 	public static List<String> serviceList = new ArrayList();
 	public static List<String> nonCompletionList = new ArrayList();
 	public static List<String> healthCareList = new ArrayList();
-	
+	public static List<String> insuranceTypeList = new ArrayList();
 	
 	static {
 
@@ -56,11 +58,21 @@ public class Rsat {
 		nonCompletionList.add("Death or serious illness");
 		nonCompletionList.add("Other reason");
 		
-      healthCareList.add("Private health insurance");
-      healthCareList.add("Employment based health insurance");
-      healthCareList.add("Self employment based health insurance");
-      healthCareList.add("Direct-purchase health insurance");
-      healthCareList.add("Medicaid");
+		healthCareList.add("Private health insurance");
+		healthCareList.add("Employment based health insurance");
+		healthCareList.add("Self employment based health insurance");
+		healthCareList.add("Direct-purchase health insurance");
+		healthCareList.add("Medicaid");
+	
+		insuranceTypeList.add("");
+		insuranceTypeList.add("Humana");
+		insuranceTypeList.add("Husky A");
+		insuranceTypeList.add("Husky B");
+		insuranceTypeList.add("Husky C");
+		insuranceTypeList.add("Husky D");
+		insuranceTypeList.add("Anthem Blue Cross Blue Shield");
+		insuranceTypeList.add("Connecticare");
+		insuranceTypeList.add("Aetna Medicate: Social Security Administration");
 	}
 
 	public Client getClient() {
@@ -269,6 +281,22 @@ public class Rsat {
 
 	public void setProgCompDate(String progCompDate) {
 		this.progCompDate = progCompDate;
+	}
+
+	public String getHaveInsurance() {
+		return haveInsurance;
+	}
+
+	public void setHaveInsurance(String haveInsurance) {
+		this.haveInsurance = haveInsurance;
+	}
+
+	public String getInsuranceType() {
+		return insuranceType;
+	}
+
+	public void setInsuranceType(String insuranceType) {
+		this.insuranceType = insuranceType;
 	}
 
 	

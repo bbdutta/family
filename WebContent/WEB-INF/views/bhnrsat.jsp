@@ -31,6 +31,13 @@ $(document).ready(function(){
 	} else {
 		$("#otherReason").prop('disabled', true);
 	}
+	
+	var haveInsuranceY = $("#haveInsuranceY");
+	if (haveInsuranceY.attr("checked") != "undefined" && haveInsuranceY.attr("checked") == "checked"){
+		$("#insuranceType").prop('disabled', false);
+	} else {
+		$("#insuranceType").prop('disabled', true);
+	}
 });
 </script>
 </head>
@@ -95,6 +102,17 @@ function enableOtherReason(){
 	{
 		document.getElementById("otherReason").value="";
 		document.getElementById("otherReason").disabled=true;
+	}
+}
+
+function enableInsuranceType(){
+	if(document.getElementById("haveInsuranceY").checked){
+		document.getElementById("insuranceType").disabled=false;
+	}
+	else
+	{
+		document.getElementById("insuranceType").value="";
+		document.getElementById("insuranceType").disabled=true;
 	}
 }
 
@@ -242,6 +260,17 @@ function enableOtherReason(){
 	</p>
     <p>
     	<label>Program Completion Date:</label><form:input id="progCompDate" type="date" path="progCompDate" />
+    </p>
+    <p>
+    	<label>Does client have insurance?</label> 
+        <form:radiobutton id="haveInsuranceY" path="haveInsurance" value="Y" onchange="enableInsuranceType()"/>Yes 
+	 	<form:radiobutton id="haveInsuranceN" path="haveInsurance" value="N" onchange="enableInsuranceType()"/>No
+	</p>
+    <p>
+      	<label>What type of insurance does the client have: </label>
+	      <form:select path="insuranceType" id="insuranceType">
+	 	 		<form:options items="${insuranceTypeList}"/>
+	      </form:select>
     </p>
 	
     <br>  

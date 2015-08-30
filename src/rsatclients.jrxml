@@ -34,7 +34,7 @@
 				<textElement>
 					<font size="24" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Behavioral Health Network Client List]]></text>
+				<text><![CDATA[RSAT Client List]]></text>
 			</staticText>
 		</band>
 	</title>

@@ -46,6 +46,8 @@
 <form:input type="hidden" path="enrolledInMedicaid"/>
 <form:input type="hidden" path="agenciesAssistedClient"/>
 <form:input type="hidden" path="progCompDate"/>
+<form:input type="hidden" path="haveInsurance"/>
+<form:input type="hidden" path="insuranceType"/>
 
 <font color="green"><b>${RSAT_SAVE_STATUS}</b></font>
 
@@ -86,6 +88,8 @@
            <p>Is enrolled in medicaid / not medicare? ${command.enrolledInMedicaid}</p>
            <p>Name of agencies that assisted client: ${command.agenciesAssistedClient}</p>
            <p>Program Completion Date: ${command.progCompDate}</p>
+	       <p>Does client have insurance? ${command.haveInsurance}</p> 
+           <p>What type of insurance does the client have: ${command.insuranceType}</p>
 	 
 	
          <br>  

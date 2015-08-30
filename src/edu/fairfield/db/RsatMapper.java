@@ -63,6 +63,8 @@ public class RsatMapper implements RowMapper<Rsat>{
 		if (progCompDate != null) {
 			rsat.setProgCompDate(progCompDate.toString());
 		}
+		rsat.setHaveInsurance(rs.getString("have_insurance"));
+		rsat.setInsuranceType(rs.getString("insurance_type"));
 		
 		return rsat;
 	}

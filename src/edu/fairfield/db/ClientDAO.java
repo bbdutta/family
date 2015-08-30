@@ -64,7 +64,7 @@ public interface ClientDAO {
 			String compIndTrtPlan, String enrollRsatAftercare, Calendar aftercareEnrollDate, String contCareAgmt, Calendar serviceDate, String serviceType,    
 			String otherService, String compAllAftercareReq, Calendar compDate, String reasonNonComp, String otherReason, 
 			Calendar drugTestDate, String testedPositive, int noOfUrineTest, String agenciesAssistedClient, 
-			String healthCareProvider, String enrolledMedicaid, Calendar progCompDate); 
+			String healthCareProvider, String enrolledMedicaid, Calendar progCompDate, String haveInsurance, String insuranceType); 
 
 
 }

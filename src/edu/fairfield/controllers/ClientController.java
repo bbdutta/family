@@ -474,6 +474,7 @@ public class ClientController {
 		model.addAttribute("serviceList", Rsat.serviceList);
 		model.addAttribute("nonCompletionList", Rsat.nonCompletionList);
 		model.addAttribute("healthCareList", Rsat.healthCareList);
+		model.addAttribute("insuranceTypeList", Rsat.insuranceTypeList);
 		
 		ClientJDBCTemplate clientJDBCTemplate = (ClientJDBCTemplate)appContext.getBean("clientJDBCTemplate");
 		Client client = null;
@@ -607,10 +608,11 @@ public class ClientController {
 				rsat.getEnrolledRsatAftercare(), aftercareEnrollDate, rsat.getContCareAgmt(), serviceDate, rsat.getTypeOfService(), 
 				rsat.getOtherService(), rsat.getCompAllAftercareReq(), compDate, rsat.getReasonNonCompletion(), 
 				rsat.getOtherReason(), drugTestDate, rsat.getTestedPositiveSubstance(), rsat.getNoOfUrineTest(), rsat.getAgenciesAssistedClient(),
-				rsat.getHealthCare(), rsat.getEnrolledInMedicaid(), progCompDate);
+				rsat.getHealthCare(), rsat.getEnrolledInMedicaid(), progCompDate, rsat.getHaveInsurance(), rsat.getInsuranceType());
 		model.addAttribute("serviceList", Rsat.serviceList);
 		model.addAttribute("nonCompletionList", Rsat.nonCompletionList);
 		model.addAttribute("healthCareList", Rsat.healthCareList);
+		model.addAttribute("insuranceTypeList", Rsat.insuranceTypeList);
 		model.addAttribute("RSAT_SAVE_STATUS", "Rsat information saved successfully.");
 
 		return new ModelAndView("bhnconfirmrsat", "command", rsat); 
@@ -623,6 +625,7 @@ public class ClientController {
 		model.addAttribute("serviceList", Rsat.serviceList);
 		model.addAttribute("nonCompletionList", Rsat.nonCompletionList);
 		model.addAttribute("healthCareList", Rsat.healthCareList);
+		model.addAttribute("insuranceTypeList", Rsat.insuranceTypeList);
 		model.addAttribute("clientId", rsat.getClient().getClientId());
 		model.addAttribute("RSAT_SAVE_STATUS", "");
 
